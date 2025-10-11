@@ -26,7 +26,6 @@ visible = false
 [node name="Fade" parent="." instance=ExtResource("5_yux3b")]
 
 [node name="Shader" parent="." instance=ExtResource("2_6rk0d")]
-visible = false
 
 [node name="Sound" type="Node" parent="."]
 
