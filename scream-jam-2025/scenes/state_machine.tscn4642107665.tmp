@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c161kl18xdbk1"]
+
+[ext_resource type="Script" uid="uid://bqnm45w65wo6p" path="res://scripts/state_machine.gd" id="1_nj0rb"]
+[ext_resource type="PackedScene" uid="uid://dot54uqxpvioo" path="res://objects/canvas/shader.tscn" id="2_6rk0d"]
+[ext_resource type="PackedScene" uid="uid://2fn8su01j5da" path="res://scenes/intro_scene.tscn" id="2_a0fpy"]
+[ext_resource type="PackedScene" uid="uid://dhwq84dhhtp70" path="res://scenes/null_scene.tscn" id="3_s46hd"]
+[ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
+[ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
+
+[node name="State Machine" type="Node"]
+script = ExtResource("1_nj0rb")
+
+[node name="Scenes" type="Node" parent="."]
+
+[node name="IntroScene" parent="Scenes" instance=ExtResource("2_a0fpy")]
+process_mode = 4
+visible = false
+
+[node name="NullScene" parent="Scenes" instance=ExtResource("3_s46hd")]
+process_mode = 4
+visible = false
+
+[node name="GameScene" parent="Scenes" instance=ExtResource("4_okvjo")]
+process_mode = 4
+visible = false
+
+[node name="Fade" parent="." instance=ExtResource("5_yux3b")]
+
+[node name="Shader" parent="." instance=ExtResource("2_6rk0d")]
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Sound"]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Sound"]
