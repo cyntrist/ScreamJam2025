@@ -8,6 +8,9 @@ signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
 
+# juego
+signal herramienta_cambiada(sentido) # hacia arriba o hacia abajo
+
 ## maquina de estados y variables de flujo
 var sm # state machine
 var current_scene = Scenes.INTRO 

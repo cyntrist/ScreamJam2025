@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bu1v1pklrgevf"
+path="res://.godot/imported/mascara_abajo.bmp-55051bfa4c9296d9cf2937024c1c1a45.res"
+
+[deps]
+
+source_file="res://assets/herramientas/mascaras/mascara_abajo.bmp"
+dest_files=["res://.godot/imported/mascara_abajo.bmp-55051bfa4c9296d9cf2937024c1c1a45.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://xj8lpf2j6u0b"
+path="res://.godot/imported/mascara_equipada.png-c60b8749f295144ca6601989f7cb7302.res"
+
+[deps]
+
+source_file="res://assets/herramientas/mascaras/mascara_equipada.png"
+dest_files=["res://.godot/imported/mascara_equipada.png-c60b8749f295144ca6601989f7cb7302.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

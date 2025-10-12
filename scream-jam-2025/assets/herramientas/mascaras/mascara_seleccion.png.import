@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cptt3q6sy5msw"
+path="res://.godot/imported/mascara_seleccion.png-b70869484b82e990b9094996abb741e4.res"
+
+[deps]
+
+source_file="res://assets/herramientas/mascaras/mascara_seleccion.png"
+dest_files=["res://.godot/imported/mascara_seleccion.png-b70869484b82e990b9094996abb741e4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
