@@ -30,7 +30,6 @@ func _desequipar_herramienta():
 func _input(event):
 	if desequipada:
 		if Input.is_action_just_pressed("Click"):
-			print_debug("JODERR")
 			Input.set_custom_mouse_cursor(mano_clic)
 		elif Input.is_action_just_released("Click"):
 			Input.set_custom_mouse_cursor(mano)
