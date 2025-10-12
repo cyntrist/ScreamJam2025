@@ -23,9 +23,9 @@ func _on_mouse_exited() -> void:
 	pass # Replace with function body.
 
 func _input(event):
-	if dentro:
-		if Input.is_action_just_pressed("Click"):
-			self.modulate = Color(0.247, 0.247, 0.247, 1.0)
-		elif Input.is_action_just_released("Click"):
-			self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	#if dentro:
+		#if Input.is_action_just_pressed("Click"):
+			#self.modulate = Color(0.247, 0.247, 0.247, 1.0)
+		#elif Input.is_action_just_released("Click"):
+			#self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	pass 
