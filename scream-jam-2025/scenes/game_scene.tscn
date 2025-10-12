@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=5 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
+[ext_resource type="Texture2D" uid="uid://bueab70n6uw07" path="res://assets/cuerpo_ph.png" id="2_bw6k5"]
 [ext_resource type="Texture2D" uid="uid://cyqd2dgstrhy3" path="res://assets/UI.png" id="2_onqr8"]
+[ext_resource type="Texture2D" uid="uid://dk6kqp1ypjpsp" path="res://assets/evento.png" id="2_ycayy"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -13,7 +15,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,14 +24,47 @@ offset_right = 752.0
 offset_bottom = 425.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.80616075, 0.80616075, 0.8061606, 1)
 
-[node name="UI" type="Control" parent="."]
+[node name="Cuerpo" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="UI"]
+[node name="Placeholder" type="TextureRect" parent="Cuerpo"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_bw6k5")
+
+[node name="Interfaz" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Evento" type="Control" parent="Interfaz"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Imagen" type="TextureRect" parent="Interfaz/Evento"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Borde" type="TextureRect" parent="Interfaz/Evento"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ycayy")
+
+[node name="Herramientas" type="Control" parent="Interfaz"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Textura" type="TextureRect" parent="Interfaz"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_onqr8")
