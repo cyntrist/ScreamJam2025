@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=20 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://bueab70n6uw07" path="res://assets/cuerpo_ph.png" id="2_bw6k5"]
@@ -13,10 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/abajo.png" id="7_mw25s"]
 [ext_resource type="Texture2D" uid="uid://b747y7aicinbo" path="res://assets/herramientas/6.png" id="7_mwyo0"]
 [ext_resource type="Texture2D" uid="uid://dnrmx12b0kthm" path="res://assets/herramientas/equipada.png" id="8_tcjrq"]
+[ext_resource type="Texture2D" uid="uid://bsbiyhu80684l" path="res://assets/event_ph.png" id="10_77hjl"]
 [ext_resource type="BitMap" uid="uid://xj8lpf2j6u0b" path="res://assets/herramientas/mascaras/mascara_equipada.png" id="12_mwyo0"]
 [ext_resource type="BitMap" uid="uid://bu1v1pklrgevf" path="res://assets/herramientas/mascaras/mascara_abajo.bmp" id="14_5ay1a"]
 [ext_resource type="BitMap" uid="uid://corv0lpxqk6v5" path="res://assets/herramientas/mascaras/mascara_arriba.png" id="14_s76x2"]
 [ext_resource type="BitMap" uid="uid://cptt3q6sy5msw" path="res://assets/herramientas/mascaras/mascara_seleccion.png" id="15_77hjl"]
+[ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="16_6aqbo"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -63,6 +65,7 @@ mouse_filter = 2
 texture = ExtResource("2_onqr8")
 
 [node name="Evento" type="Control" parent="Interfaz"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -72,6 +75,7 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture_normal = ExtResource("10_77hjl")
 
 [node name="Borde" type="TextureRect" parent="Interfaz/Evento"]
 layout_mode = 0
@@ -90,6 +94,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture_normal = ExtResource("8_tcjrq")
 texture_click_mask = ExtResource("12_mwyo0")
+script = ExtResource("16_6aqbo")
 
 [node name="Arriba" type="TextureButton" parent="Interfaz/Herramientas"]
 layout_mode = 0
@@ -97,6 +102,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture_normal = ExtResource("5_b5spy")
 texture_click_mask = ExtResource("14_s76x2")
+script = ExtResource("16_6aqbo")
 
 [node name="Seleccionar" type="TextureButton" parent="Interfaz/Herramientas"]
 layout_mode = 0
@@ -104,6 +110,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("6_utbpp")
 texture_click_mask = ExtResource("15_77hjl")
+script = ExtResource("16_6aqbo")
 
 [node name="Abajo" type="TextureButton" parent="Interfaz/Herramientas"]
 layout_mode = 0
@@ -111,6 +118,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture_normal = ExtResource("7_mw25s")
 texture_click_mask = ExtResource("14_5ay1a")
+script = ExtResource("16_6aqbo")
 
 [connection signal="pressed" from="Interfaz/Herramientas/Equipada" to="." method="_on_equipada_pressed"]
 [connection signal="pressed" from="Interfaz/Herramientas/Arriba" to="." method="_on_arriba_pressed"]

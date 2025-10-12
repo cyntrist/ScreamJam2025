@@ -18,9 +18,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	pass
-	
-func cambiar_herramienta(sentido):
-	pass
 
 
 func _on_abajo_pressed() -> void:
@@ -42,10 +39,10 @@ func _on_arriba_pressed() -> void:
 
 
 func _on_seleccionar_pressed() -> void:
-	print_debug("SELECCION")
+	Global.equipar_herramienta.emit(ind_selec);
 	pass # Replace with function body.
 
 
 func _on_equipada_pressed() -> void:
-	print_debug("DESEQUIPAR")
+	Global.desequipar.emit();
 	pass # Replace with function body.

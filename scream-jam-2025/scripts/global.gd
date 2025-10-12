@@ -9,7 +9,8 @@ signal on_disable(scene)
 signal on_game_end()
 
 # juego
-signal herramienta_cambiada(sentido) # hacia arriba o hacia abajo
+signal equipar_herramienta(index) #que herramienta 
+signal desequipar()
 
 ## maquina de estados y variables de flujo
 var sm # state machine
@@ -21,6 +22,10 @@ enum Scenes { INTRO, GAME, NULL}
 ## sonido
 var sfx
 var bgm
+
+#input
+var cm #cursor manager
+
 
 var coolDown = 0.5
 var startCoolDown = false
