@@ -1,17 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=15 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://bueab70n6uw07" path="res://assets/cuerpo_ph.png" id="2_bw6k5"]
 [ext_resource type="Texture2D" uid="uid://cyqd2dgstrhy3" path="res://assets/UI.png" id="2_onqr8"]
 [ext_resource type="Texture2D" uid="uid://dk6kqp1ypjpsp" path="res://assets/evento.png" id="2_ycayy"]
-[ext_resource type="Texture2D" uid="uid://opqy7htrrxou" path="res://assets/herramientas/2.png" id="3_tqxxy"]
-[ext_resource type="Texture2D" uid="uid://bovmgpminp4xx" path="res://assets/herramientas/3.png" id="4_5ay1a"]
 [ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/arriba.png" id="5_b5spy"]
-[ext_resource type="Texture2D" uid="uid://cnc50f8n2xoid" path="res://assets/herramientas/4.png" id="5_ldkr4"]
-[ext_resource type="Texture2D" uid="uid://ntraa1gmvhd7" path="res://assets/herramientas/5.png" id="6_liy57"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/1.png" id="6_utbpp"]
 [ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/abajo.png" id="7_mw25s"]
-[ext_resource type="Texture2D" uid="uid://b747y7aicinbo" path="res://assets/herramientas/6.png" id="7_mwyo0"]
 [ext_resource type="Texture2D" uid="uid://dnrmx12b0kthm" path="res://assets/herramientas/equipada.png" id="8_tcjrq"]
 [ext_resource type="Texture2D" uid="uid://bsbiyhu80684l" path="res://assets/event_ph.png" id="10_77hjl"]
 [ext_resource type="BitMap" uid="uid://xj8lpf2j6u0b" path="res://assets/herramientas/mascaras/mascara_equipada.png" id="12_mwyo0"]
@@ -29,7 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
-srp_herram = Array[Texture2D]([ExtResource("6_utbpp"), ExtResource("3_tqxxy"), ExtResource("4_5ay1a"), ExtResource("5_ldkr4"), ExtResource("6_liy57"), ExtResource("7_mwyo0")])
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1

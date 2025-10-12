@@ -26,7 +26,6 @@ var bgm
 #input
 var cm #cursor manager
 
-
 var coolDown = 0.5
 var startCoolDown = false
 var random = RandomNumberGenerator.new()

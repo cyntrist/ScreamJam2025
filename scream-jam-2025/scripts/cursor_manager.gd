@@ -3,7 +3,7 @@ extends Node
 # Load the custom images for the mouse cursor.
 var mano = load("res://assets/cursor.png")
 var mano_clic = load("res://assets/cursor_clic.png")
-#var spr_herramientas = load("res://beam.png")
+@export var spr_herram: Array[Texture2D] = [] # sprites de los cursores de las herramientas
 var desequipada = true;
 
 func _ready():
@@ -19,7 +19,7 @@ func _ready():
 
 func _equipar_herramienta(index):
 	desequipada = false;
-	#Input.set_custom_mouse_cursor(mano)
+	Input.set_custom_mouse_cursor(spr_herram[index])
 	pass
 
 func _desequipar_herramienta():
@@ -33,4 +33,5 @@ func _input(event):
 			Input.set_custom_mouse_cursor(mano_clic)
 		elif Input.is_action_just_released("Click"):
 			Input.set_custom_mouse_cursor(mano)
+	## si los cursores de las herramientas van a estar animados......
 	pass 
