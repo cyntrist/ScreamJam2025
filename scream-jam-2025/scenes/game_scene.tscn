@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=9 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://bueab70n6uw07" path="res://assets/cuerpo_ph.png" id="2_bw6k5"]
 [ext_resource type="Texture2D" uid="uid://cyqd2dgstrhy3" path="res://assets/UI.png" id="2_onqr8"]
 [ext_resource type="Texture2D" uid="uid://dk6kqp1ypjpsp" path="res://assets/evento.png" id="2_ycayy"]
+[ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/arriba.png" id="5_b5spy"]
+[ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/1.png" id="6_utbpp"]
+[ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/abajo.png" id="7_mw25s"]
+[ext_resource type="Texture2D" uid="uid://dnrmx12b0kthm" path="res://assets/herramientas/mano.png" id="8_tcjrq"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -14,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
+herramientas = Array[Texture2D]([null, null, null, null, null, null])
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,6 +46,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
+[node name="Textura" type="TextureRect" parent="Interfaz"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("2_onqr8")
+
 [node name="Evento" type="Control" parent="Interfaz"]
 anchors_preset = 0
 offset_right = 40.0
@@ -63,9 +75,26 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Textura" type="TextureRect" parent="Interfaz"]
+[node name="Arriba" type="TextureButton" parent="Interfaz/Herramientas"]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2
-texture = ExtResource("2_onqr8")
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("5_b5spy")
+
+[node name="Botón" type="TextureButton" parent="Interfaz/Herramientas"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("6_utbpp")
+
+[node name="Abajo" type="TextureButton" parent="Interfaz/Herramientas"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_mw25s")
+
+[node name="Equipada" type="TextureButton" parent="Interfaz/Herramientas"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("8_tcjrq")
