@@ -7,7 +7,6 @@ signal on_transition_end
 signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
-
 # juego
 signal equipar_herramienta(index) #que herramienta 
 signal desequipar()
@@ -16,6 +15,8 @@ signal desequipar()
 var sm # state machine
 var current_scene = Scenes.INTRO 
 var next_scene = Scenes.INTRO
+var coolDown = 0.5
+var startCoolDown = false
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
 enum Scenes { INTRO, GAME, NULL}
 
@@ -23,12 +24,11 @@ enum Scenes { INTRO, GAME, NULL}
 var sfx
 var bgm
 
-#input
-var cm #cursor manager
+## input
+var cm # cursor manager
 
-var coolDown = 0.5
-var startCoolDown = false
-var random = RandomNumberGenerator.new()
+## lógica del juego
+var desbloq_ultima = false # ultima herramienta desbloqueada
 
 func _ready() -> void:
 	pass

@@ -25,7 +25,10 @@ func _on_mouse_exited() -> void:
 func _input(event):
 	if dentro:
 		if Input.is_action_just_pressed("Click"):
-			self.modulate = Color(0.247, 0.247, 0.247, 1.0)
+			self.modulate = clicked_color
 		elif Input.is_action_just_released("Click"):
-			self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			if dentro:
+				self.modulate = hover_color;
+			else:
+				self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	pass 

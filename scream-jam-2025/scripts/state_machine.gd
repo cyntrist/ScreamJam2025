@@ -30,6 +30,7 @@ func _input(event):
 	if event.is_action_pressed("1"):
 		scene = Global.Scenes.INTRO
 	if event.is_action_pressed("2"):
+		Global.desbloq_ultima = !Global.desbloq_ultima
 		scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()

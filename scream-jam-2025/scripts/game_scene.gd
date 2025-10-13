@@ -22,15 +22,21 @@ func _process(delta: float) -> void:
 
 func _on_abajo_pressed() -> void:
 	ind_selec -= 1
+	var max = spr_herram.size() - 1
+	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
+		max -= 1;
 	if (ind_selec < 0):
-		ind_selec = spr_herram.size() - 1;
+		ind_selec = max;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.
 
 
 func _on_arriba_pressed() -> void:
 	ind_selec += 1
-	if (ind_selec >= spr_herram.size()):
+	var max = spr_herram.size()
+	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
+		max -= 1;
+	if (ind_selec >= max):
 		ind_selec = 0;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.
