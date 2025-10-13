@@ -13,12 +13,12 @@ signal equipar_herramienta(index) #que herramienta
 signal desequipar()
 # eventos luego hare limpieza no creo que todos estos se usen
 #signal mostrar_feedback(parte) # para mostrar feedback al seleccionar una parte
-signal mostrar_evento(tipo)
-signal esconder_evento()
-signal mostrar_dialogo()
-signal esconder_dialogo()
-signal mostrar_imagen()
-signal esconder_imagen()
+#signal mostrar_evento(tipo)
+#signal esconder_evento()
+#signal mostrar_dialogo()
+#signal esconder_dialogo()
+#signal mostrar_imagen()
+#signal esconder_imagen()
 
 ## lógica del juego
 # herramientas
