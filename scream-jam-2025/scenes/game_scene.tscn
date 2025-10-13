@@ -72,11 +72,41 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Placeholder" type="TextureRect" parent="Cuerpo"]
+[node name="Base" type="TextureRect" parent="Cuerpo"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bw6k5")
+
+[node name="Partes" type="Control" parent="Cuerpo"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Brazo1" type="TextureButton" parent="Cuerpo/Partes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Brazo2" type="TextureButton" parent="Cuerpo/Partes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pierna1" type="TextureButton" parent="Cuerpo/Partes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pierna2" type="TextureButton" parent="Cuerpo/Partes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Evento" type="Control" parent="."]
 visible = false

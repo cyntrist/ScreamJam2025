@@ -19,27 +19,27 @@ func on_disable():
 func _ready() -> void:
 	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_abajo_pressed() -> void:
 	ind_selec -= 1
-	var max = spr_herram.size() - 1
+	var maxI = spr_herram.size() - 1
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
-		max -= 1;
+		maxI -= 1;
 	if (ind_selec < 0):
-		ind_selec = max;
+		ind_selec = maxI;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.
 
 
 func _on_arriba_pressed() -> void:
 	ind_selec += 1
-	var max = spr_herram.size()
+	var maxI = spr_herram.size()
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
-		max -= 1;
-	if (ind_selec >= max):
+		maxI -= 1;
+	if (ind_selec >= maxI):
 		ind_selec = 0;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.

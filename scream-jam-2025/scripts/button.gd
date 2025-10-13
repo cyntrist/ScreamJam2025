@@ -22,7 +22,7 @@ func _on_mouse_exited() -> void:
 	dentro = false;
 	pass # Replace with function body.
 
-func _input(event):
+func _input(_event):
 	if dentro:
 		if Input.is_action_just_pressed("Click"):
 			self.modulate = clicked_color

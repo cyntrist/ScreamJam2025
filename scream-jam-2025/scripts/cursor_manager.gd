@@ -29,7 +29,7 @@ func _desequipar_herramienta():
 	Input.set_custom_mouse_cursor(mano)
 	pass
 	
-func _input(event):
+func _input(_event):
 	if desequipada:
 		if Input.is_action_just_pressed("Click"):
 			Input.set_custom_mouse_cursor(mano_clic)
