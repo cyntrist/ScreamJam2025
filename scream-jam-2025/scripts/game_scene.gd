@@ -10,7 +10,6 @@ var ind_selec = 0; # indice de la herramienta seleccionada
 
 func on_enable():
 	ind_selec = 0
-	#Global.seleccionada = ind_selec;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass
 
@@ -24,6 +23,8 @@ func _process(_delta: float) -> void:
 	pass
 
 
+
+### HERRAMIENTAS!!!!!!!!!!!!!!!!
 func _on_abajo_pressed() -> void:
 	ind_selec -= 1
 	var maxI = spr_herram.size() - 1
@@ -56,3 +57,39 @@ func _on_equipada_pressed() -> void:
 	Global.desequipar.emit();
 	btn_deselec.texture_normal = mano
 	pass # Replace with function body.
+
+
+
+
+### FEEDBACK!!!!!!!!!!!!!!!!
+func _on_cabeza_pressed() -> void:
+	_feedback(Global.Partes.CABEZA)
+	pass # Replace with function body.
+	
+func _on_torso_pressed() -> void:
+	_feedback(Global.Partes.TORSO)
+	pass # Replace with function body.
+	
+func _on_brazo_1_pressed() -> void:
+	_feedback(Global.Partes.BRAZO1)
+	pass # Replace with function body.
+func _on_brazo_2_pressed() -> void:
+	_feedback(Global.Partes.BRAZO2)
+	pass # Replace with function body.
+
+
+func _on_pierna_1_pressed() -> void:
+	_feedback(Global.Partes.PIERNA1)
+	pass # Replace with function body.
+func _on_pierna_2_pressed() -> void:
+	_feedback(Global.Partes.PIERNA2)
+	pass # Replace with function body.
+
+
+func _feedback(parte):
+	#esconder el resto de partes
+	for nodo in feedback_nodos:
+		nodo.visible = false;
+	#mostrar la nuestra
+	feedback_nodos[parte].visible = true;
+	pass

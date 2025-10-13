@@ -12,6 +12,7 @@ signal on_game_end()
 signal equipar_herramienta(index) #que herramienta 
 signal desequipar()
 # eventos luego hare limpieza no creo que todos estos se usen
+#signal mostrar_feedback(parte) # para mostrar feedback al seleccionar una parte
 signal mostrar_evento(tipo)
 signal esconder_evento()
 signal mostrar_dialogo()
@@ -25,7 +26,7 @@ var seleccionada = 0
 var equipada = -1 
 # flujo e inspeccion
 var mensaje_actual = 0; # menasej a mostrar
-enum Partes { CABEZA, BRAZO1, BRAZO2, PIERNA1, PIERNA2 }
+enum Partes { CABEZA, TORSO, BRAZO1, BRAZO2, PIERNA1, PIERNA2 }
 var cuerpo = [ -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
 var intentos = 3;
 var desbloq_ultima = false # ultima herramienta desbloqueada
