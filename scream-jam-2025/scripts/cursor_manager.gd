@@ -1,8 +1,8 @@
 extends Node
 
 # Load the custom images for the mouse cursor.
-var mano = load("res://assets/cursor.png")
-var mano_clic = load("res://assets/cursor_clic.png")
+var mano = load("res://assets/herramientas/cursores/cursor.png")
+var mano_clic = load("res://assets/herramientas/cursores/cursor_clic.png")
 @export var spr_herram: Array[Texture2D] = [] # sprites de los cursores de las herramientas
 var desequipada = true;
 
@@ -23,6 +23,7 @@ func _equipar_herramienta(index):
 	pass
 
 func _desequipar_herramienta():
+	print_debug()
 	desequipada = true;
 	Input.set_custom_mouse_cursor(mano)
 	pass

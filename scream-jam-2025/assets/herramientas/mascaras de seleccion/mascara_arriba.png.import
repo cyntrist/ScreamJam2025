@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://corv0lpxqk6v5"
+path="res://.godot/imported/mascara_arriba.png-36a97ba0060a731c65abc0cf5e20fa47.res"
+
+[deps]
+
+source_file="res://assets/herramientas/mascaras de seleccion/mascara_arriba.png"
+dest_files=["res://.godot/imported/mascara_arriba.png-36a97ba0060a731c65abc0cf5e20fa47.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

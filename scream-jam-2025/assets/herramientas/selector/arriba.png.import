@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cklcly5hmdiov"
-path="res://.godot/imported/abajo.png-d0a22c0da4eddc3eb741c4cd22543284.ctex"
+uid="uid://bb6wnukalhxlx"
+path="res://.godot/imported/arriba.png-49fd31c5716a5a32452f9916845c89d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/herramientas/abajo.png"
-dest_files=["res://.godot/imported/abajo.png-d0a22c0da4eddc3eb741c4cd22543284.ctex"]
+source_file="res://assets/herramientas/selector/arriba.png"
+dest_files=["res://.godot/imported/arriba.png-49fd31c5716a5a32452f9916845c89d7.ctex"]
 
 [params]
 

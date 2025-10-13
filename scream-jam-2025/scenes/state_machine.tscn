@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c161kl18xdbk1"]
+[gd_scene load_steps=14 format=3 uid="uid://c161kl18xdbk1"]
 
 [ext_resource type="Script" uid="uid://bqnm45w65wo6p" path="res://scripts/state_machine.gd" id="1_nj0rb"]
 [ext_resource type="PackedScene" uid="uid://dot54uqxpvioo" path="res://objects/canvas/shader.tscn" id="2_6rk0d"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
 [ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
 [ext_resource type="Script" uid="uid://bmece1cj8rg21" path="res://scripts/cursor_manager.gd" id="7_s46hd"]
+[ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/1.png" id="8_wbte5"]
+[ext_resource type="Texture2D" uid="uid://opqy7htrrxou" path="res://assets/herramientas/2.png" id="9_olh3i"]
+[ext_resource type="Texture2D" uid="uid://bovmgpminp4xx" path="res://assets/herramientas/3.png" id="10_bp2fu"]
+[ext_resource type="Texture2D" uid="uid://cnc50f8n2xoid" path="res://assets/herramientas/4.png" id="11_rook5"]
+[ext_resource type="Texture2D" uid="uid://ntraa1gmvhd7" path="res://assets/herramientas/5.png" id="12_uty8n"]
+[ext_resource type="Texture2D" uid="uid://b747y7aicinbo" path="res://assets/herramientas/6.png" id="13_wfahm"]
 
 [node name="State Machine" type="Node" node_paths=PackedStringArray("scenes")]
 script = ExtResource("1_nj0rb")
@@ -37,3 +43,4 @@ visible = false
 
 [node name="Cursor Manager" type="Node" parent="."]
 script = ExtResource("7_s46hd")
+spr_herram = Array[Texture2D]([ExtResource("8_wbte5"), ExtResource("9_olh3i"), ExtResource("10_bp2fu"), ExtResource("11_rook5"), ExtResource("12_uty8n"), ExtResource("13_wfahm")])

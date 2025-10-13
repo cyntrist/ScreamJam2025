@@ -7,6 +7,7 @@ var ind_selec = 0; # indice de la herramienta seleccionada
 
 func on_enable():
 	ind_selec = 0
+	#Global.seleccionada = ind_selec;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	pass
 

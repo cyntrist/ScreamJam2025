@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnrmx12b0kthm"
-path="res://.godot/imported/equipada.png-fb5bfec22a90011ba2120f7dad7cf423.ctex"
+uid="uid://cnc50f8n2xoid"
+path="res://.godot/imported/4.png-8b5807ca871a3165b054d7c80c882eff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/herramientas/equipada.png"
-dest_files=["res://.godot/imported/equipada.png-fb5bfec22a90011ba2120f7dad7cf423.ctex"]
+source_file="res://assets/herramientas/selector/4.png"
+dest_files=["res://.godot/imported/4.png-8b5807ca871a3165b054d7c80c882eff.ctex"]
 
 [params]
 

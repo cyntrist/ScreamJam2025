@@ -28,6 +28,8 @@ var bgm
 var cm # cursor manager
 
 ## lógica del juego
+var seleccionada = 0
+var equipada = -1 
 var desbloq_ultima = false # ultima herramienta desbloqueada
 
 func _ready() -> void:

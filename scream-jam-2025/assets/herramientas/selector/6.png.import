@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb6wnukalhxlx"
-path="res://.godot/imported/arriba.png-37255d445bfbe6563c4425e84de8a52e.ctex"
+uid="uid://b747y7aicinbo"
+path="res://.godot/imported/6.png-7e2ec38cfb875c924b961bb3d354f36d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/herramientas/arriba.png"
-dest_files=["res://.godot/imported/arriba.png-37255d445bfbe6563c4425e84de8a52e.ctex"]
+source_file="res://assets/herramientas/selector/6.png"
+dest_files=["res://.godot/imported/6.png-7e2ec38cfb875c924b961bb3d354f36d.ctex"]
 
 [params]
 
