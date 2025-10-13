@@ -168,7 +168,7 @@ offset_bottom = 970.0
 [node name="Brazo2" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
 offset_left = 595.0
-offset_top = 868.0
+offset_top = 838.0
 offset_right = 1066.0
 offset_bottom = 1000.0
 
