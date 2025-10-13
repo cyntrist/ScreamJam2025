@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=20 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -9,15 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://bovmgpminp4xx" path="res://assets/herramientas/selector/3.png" id="4_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://cnc50f8n2xoid" path="res://assets/herramientas/selector/4.png" id="5_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://ntraa1gmvhd7" path="res://assets/herramientas/selector/5.png" id="6_103ce"]
-[ext_resource type="Texture2D" path="res://assets/herramientas/1.png" id="6_utbpp"]
 [ext_resource type="Texture2D" uid="uid://b747y7aicinbo" path="res://assets/herramientas/selector/6.png" id="7_pb36m"]
 [ext_resource type="Texture2D" uid="uid://bsbiyhu80684l" path="res://assets/event_ph.png" id="10_77hjl"]
 [ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/selector/arriba.png" id="12_6aqbo"]
-[ext_resource type="BitMap" path="res://assets/herramientas/mascaras/mascara_equipada.png" id="12_mwyo0"]
 [ext_resource type="BitMap" uid="uid://corv0lpxqk6v5" path="res://assets/herramientas/mascaras de seleccion/mascara_arriba.png" id="13_6aqbo"]
 [ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="16_6aqbo"]
 [ext_resource type="BitMap" uid="uid://cptt3q6sy5msw" path="res://assets/herramientas/mascaras de seleccion/mascara_seleccion.png" id="16_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/selector/abajo.png" id="17_ro0ie"]
+[ext_resource type="BitMap" uid="uid://ww7iyiuqsagx" path="res://assets/herramientas/mascaras de seleccion/mascara_deseleccion.png" id="18_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://bryif2ax1071x" path="res://assets/herramientas/selector/desequipar.png" id="18_77hjl"]
 [ext_resource type="BitMap" uid="uid://bu1v1pklrgevf" path="res://assets/herramientas/mascaras de seleccion/mascara_abajo.bmp" id="18_ro0ie"]
 
@@ -93,22 +92,16 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 texture_normal = ExtResource("12_6aqbo")
 texture_click_mask = ExtResource("13_6aqbo")
-script = ExtResource("16_6aqbo")
-
-[node name="Seleccionar" type="TextureButton" parent="Interfaz/Herramientas"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("6_utbpp")
-texture_click_mask = ExtResource("16_ro0ie")
 script = ExtResource("16_6aqbo")
 
 [node name="Abajo" type="TextureButton" parent="Interfaz/Herramientas"]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 texture_normal = ExtResource("17_ro0ie")
 texture_click_mask = ExtResource("18_ro0ie")
 script = ExtResource("16_6aqbo")
@@ -119,11 +112,23 @@ offset_left = 1670.0
 offset_top = 50.0
 offset_right = 1870.0
 offset_bottom = 250.0
+mouse_filter = 1
 texture_normal = ExtResource("18_77hjl")
-texture_click_mask = ExtResource("12_mwyo0")
+texture_click_mask = ExtResource("18_6aqbo")
+script = ExtResource("16_6aqbo")
+
+[node name="Seleccionar" type="TextureButton" parent="Interfaz/Herramientas"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 30.0
+offset_right = 237.0
+offset_bottom = 230.0
+mouse_filter = 1
+texture_normal = ExtResource("2_6aqbo")
+texture_click_mask = ExtResource("16_ro0ie")
 script = ExtResource("16_6aqbo")
 
 [connection signal="pressed" from="Interfaz/Herramientas/Arriba" to="." method="_on_arriba_pressed"]
-[connection signal="pressed" from="Interfaz/Herramientas/Seleccionar" to="." method="_on_seleccionar_pressed"]
 [connection signal="pressed" from="Interfaz/Herramientas/Abajo" to="." method="_on_abajo_pressed"]
 [connection signal="pressed" from="Interfaz/Herramientas/Deseleccionar" to="." method="_on_equipada_pressed"]
+[connection signal="pressed" from="Interfaz/Herramientas/Seleccionar" to="." method="_on_seleccionar_pressed"]
