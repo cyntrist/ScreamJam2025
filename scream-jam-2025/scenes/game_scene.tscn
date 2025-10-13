@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=27 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -14,8 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://ct0pkyuhxrx3k" path="res://assets/eventos/burbuja.png" id="9_103ce"]
 [ext_resource type="Texture2D" uid="uid://bgr38k8h3768o" path="res://assets/eventos/evento_ph.png" id="10_77hjl"]
 [ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/selector/arriba.png" id="12_6aqbo"]
+[ext_resource type="Texture2D" uid="uid://cbqopl173ifcn" path="res://assets/feedback/investigar_cabeza.png" id="12_ttvoq"]
 [ext_resource type="BitMap" uid="uid://corv0lpxqk6v5" path="res://assets/herramientas/mascaras de seleccion/mascara_arriba.png" id="13_6aqbo"]
+[ext_resource type="Texture2D" uid="uid://b12nd55woemo0" path="res://assets/feedback/investigar_brazo.png" id="13_rw4oa"]
+[ext_resource type="Texture2D" uid="uid://bwqp6852tkknr" path="res://assets/feedback/investigar_antebrazo.png" id="14_r47aq"]
+[ext_resource type="Texture2D" uid="uid://d2622bkvf152" path="res://assets/feedback/investigar_muslo.png" id="15_6irsn"]
 [ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="16_6aqbo"]
+[ext_resource type="Texture2D" uid="uid://cdl60gf3ll6cx" path="res://assets/feedback/investigar_pierna.png" id="16_gqftm"]
 [ext_resource type="BitMap" uid="uid://cptt3q6sy5msw" path="res://assets/herramientas/mascaras de seleccion/mascara_seleccion.png" id="16_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/selector/abajo.png" id="17_ro0ie"]
 [ext_resource type="BitMap" uid="uid://ww7iyiuqsagx" path="res://assets/herramientas/mascaras de seleccion/mascara_deseleccion.png" id="18_6aqbo"]
@@ -88,30 +93,40 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Cabeza" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("12_ttvoq")
 
-[node name="TextureRect3" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Brazo1" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("13_rw4oa")
 
-[node name="TextureRect4" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Brazo2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("14_r47aq")
 
-[node name="TextureRect" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Pierna1" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("15_6irsn")
 
-[node name="TextureRect5" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Pierna2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("16_gqftm")
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
