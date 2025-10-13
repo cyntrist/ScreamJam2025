@@ -2,6 +2,8 @@ extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
 @onready var btn_selec = $Interfaz/Herramientas/Seleccionar # boton de seleccionar
+@onready var btn_deselec = $Interfaz/Herramientas/Deseleccionar # boton de deseleccionar
+var mano = load("res://assets/herramientas/selector/desequipar.png")
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 var ind_selec = 0; # indice de la herramienta seleccionada
 
@@ -45,9 +47,11 @@ func _on_arriba_pressed() -> void:
 
 func _on_seleccionar_pressed() -> void:
 	Global.equipar_herramienta.emit(ind_selec);
+	btn_deselec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.
 
 
 func _on_equipada_pressed() -> void:
 	Global.desequipar.emit();
+	btn_deselec.texture_normal = mano
 	pass # Replace with function body.
