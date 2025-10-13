@@ -1,0 +1,21 @@
+hola nieves te quiero
+
+sin contar arte esto es lo que he pensado que queda por hacer
+
+mecanicas:
+    > cuerpo
+        - investigar parte del cuerpo
+        - curar parte del cuerpo
+    > eventos
+        - pictograficos
+        - conversaciones
+    > progresion correcta 
+        - programar finales
+
+respiración etc
+…
+
+sonido:
+    > sfx
+    > ambiente / musica
+
