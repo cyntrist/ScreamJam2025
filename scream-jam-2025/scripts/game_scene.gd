@@ -1,6 +1,7 @@
 extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
+@export var feedback_nodos: Array[Texture2D] = [] # nodos de los marcos de selección de cada parte
 @onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
 @onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
 var mano = load("res://assets/herramientas/selector/desequipar.png")

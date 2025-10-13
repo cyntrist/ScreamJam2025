@@ -83,6 +83,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Feedback" type="Control" parent="Cuerpo/Partes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect4" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect5" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
 offset_right = 40.0
@@ -105,8 +135,10 @@ offset_bottom = 40.0
 
 [node name="Pierna2" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1308.0
+offset_top = 741.0
+offset_right = 1809.0
+offset_bottom = 931.0
 
 [node name="Evento" type="Control" parent="."]
 visible = false
@@ -128,6 +160,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_ycayy")
 
 [node name="Herramientas" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
