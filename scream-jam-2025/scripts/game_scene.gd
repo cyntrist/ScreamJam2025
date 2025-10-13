@@ -1,8 +1,8 @@
 extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
-@onready var btn_selec = $Interfaz/Herramientas/Seleccionar # boton de seleccionar
-@onready var btn_deselec = $Interfaz/Herramientas/Deseleccionar # boton de deseleccionar
+@onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
+@onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
 var mano = load("res://assets/herramientas/selector/desequipar.png")
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 var ind_selec = 0; # indice de la herramienta seleccionada

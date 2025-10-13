@@ -19,12 +19,13 @@ func _ready():
 
 func _equipar_herramienta(index):
 	desequipada = false;
+	Global.equipada = index;
 	Input.set_custom_mouse_cursor(spr_herram[index])
 	pass
 
 func _desequipar_herramienta():
-	print_debug()
 	desequipada = true;
+	Global.equipada = -1;
 	Input.set_custom_mouse_cursor(mano)
 	pass
 	

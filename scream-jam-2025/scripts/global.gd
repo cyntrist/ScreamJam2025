@@ -28,8 +28,13 @@ var bgm
 var cm # cursor manager
 
 ## lógica del juego
+# herramientas
 var seleccionada = 0
 var equipada = -1 
+# flujo e inspeccion
+enum Partes { CABEZA, BRAZO1, BRAZO2, PIERNA1, PIERNA2 }
+var cuerpo = [ -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
+var intentos = 3;
 var desbloq_ultima = false # ultima herramienta desbloqueada
 
 func _ready() -> void:
