@@ -12,10 +12,14 @@ mecanicas:
     > progresion correcta 
         - programar finales
 
-respiración etc
 …
 
 sonido:
     > sfx
     > ambiente / musica
 
+respiración etc
+
+buscar fuentes chulas
+
+pensar un nombre
