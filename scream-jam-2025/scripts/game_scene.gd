@@ -65,35 +65,35 @@ func _on_equipada_pressed() -> void:
 
 ### BOTONES!!!!!!!!!!!!!!!!
 func _on_cabeza_pressed() -> void:
-	_feedback(Global.Partes.CABEZA)
-	_mostrar_imagen(Global.Partes.CABEZA)
+	_investigar(Global.Partes.CABEZA)
 	pass # Replace with function body.
 	
 func _on_torso_pressed() -> void:
-	_feedback(Global.Partes.TORSO)
-	_mostrar_imagen(Global.Partes.TORSO)
+	_investigar(Global.Partes.TORSO)
 	pass # Replace with function body.
 	
 func _on_brazo_1_pressed() -> void:
-	_feedback(Global.Partes.BRAZO1)
-	_mostrar_imagen(Global.Partes.BRAZO1)
+	_investigar(Global.Partes.BRAZO1)
 	pass # Replace with function body.
 func _on_brazo_2_pressed() -> void:
-	_feedback(Global.Partes.BRAZO2)
-	_mostrar_imagen(Global.Partes.BRAZO2)
+	_investigar(Global.Partes.BRAZO2)
 	pass # Replace with function body.
 
 
 func _on_pierna_1_pressed() -> void:
-	print_debug("COJONESSSSSSSSSSSS");
-	_feedback(Global.Partes.PIERNA1)
-	_mostrar_imagen(Global.Partes.PIERNA1)
+	_investigar(Global.Partes.PIERNA1)
 	pass # Replace with function body.
 func _on_pierna_2_pressed() -> void:
-	_feedback(Global.Partes.PIERNA2)
-	_mostrar_imagen(Global.Partes.PIERNA2)
+	_investigar(Global.Partes.PIERNA2)
 	pass # Replace with function body.
 
+func _investigar(parte):
+	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
+		_feedback(parte) #ver feedback de la parte
+		_mostrar_imagen(parte) # mostrar y actualizar imange
+	else: # si ya esta seleccionada se deselecciona
+		_deseleccionar(parte)
+	pass # Replace with function body.
 
 func _feedback(parte):
 	#esconder el resto de partes
@@ -107,3 +107,7 @@ func _mostrar_imagen(parte):
 	nodo_evento.visible = true;
 	nodo_evento.get_child(0).texture = spr_imagenes[parte];
 	pass
+	
+func _deseleccionar(parte):
+	feedback_nodos[parte].visible = false;
+	nodo_evento.visible = false;
