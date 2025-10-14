@@ -4,7 +4,7 @@ class_name Boton
 
 @export var hover_color : Color = Color(0.623, 0.136, 0.14, 1.0)
 @export var clicked_color : Color = Color(0.247, 0.247, 0.247, 1.0)
-@export var off_color : Color = Color(1.0, 1.0, 1.0, 1.0)
+@export var off_color : Color = Color(0.247, 0.247, 0.247, 1.0)
 var dentro = false;
 var enabled = true;
 
@@ -40,4 +40,3 @@ func _input(_event):
 				self.modulate = hover_color;
 			else:
 				self.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	pass 

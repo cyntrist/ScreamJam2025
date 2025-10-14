@@ -146,7 +146,7 @@ func _on_imagen_pressed() -> void:
 		print_debug("La parte está a: ", Global.cuerpo[Global.parte_seleccionada])
 
 func _actuar() -> void: # hacer algo en la parte del cuerpo
-	if (Global.herram_seleccionada == Global.solucion[Global.parte_seleccionada]):
+	if (Global.herram_equipada == Global.solucion[Global.parte_seleccionada]):
 		Global.cuerpo[Global.parte_seleccionada] = 1 
 	else:
 		Global.cuerpo[Global.parte_seleccionada] = 0
@@ -163,7 +163,6 @@ func _actualizar_img(parte):
 			pass
 		0:
 			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
-			
 			pass
 		1:
 			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
