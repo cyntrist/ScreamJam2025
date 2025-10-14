@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dpdxom7wl30t0"
+path="res://.godot/imported/mascara_retry.png-0d7805a1bda8c5e6af122849d868d087.res"
+
+[deps]
+
+source_file="res://assets/gameover/mascara_retry.png"
+dest_files=["res://.godot/imported/mascara_retry.png-0d7805a1bda8c5e6af122849d868d087.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

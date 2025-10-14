@@ -3,14 +3,8 @@ hola nieves te quiero
 sin contar arte esto es lo que he pensado que queda por hacer
 
 mecanicas:
-    > cuerpo
-        - curar parte del cuerpo
-    > eventos
-        - conversaciones
-    > progresion correcta 
-        - programar finales
-
-…
+    > mostrar cambio en el cuerpo
+    > conversaciones
 
 sonido:
     > sfx

@@ -11,14 +11,7 @@ signal on_game_end()
 # herramientas
 signal equipar_herramienta(index) #que herramienta 
 signal desequipar()
-# eventos luego hare limpieza no creo que todos estos se usen
-#signal mostrar_feedback(parte) # para mostrar feedback al seleccionar una parte
-#signal mostrar_evento(tipo)
-#signal esconder_evento()
-#signal mostrar_dialogo()
-#signal esconder_dialogo()
-#signal mostrar_imagen()
-#signal esconder_imagen()
+
 
 ## lógica del juego
 # herramientas
@@ -40,7 +33,7 @@ var next_scene = Scenes.INTRO
 var coolDown = 0.5
 var startCoolDown = false
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
-enum Scenes { INTRO, GAME, CREDITS, NULL}
+enum Scenes { INTRO, GAME, CREDITS, GAME_OVER, NULL}
 
 ## sonido
 var sfx

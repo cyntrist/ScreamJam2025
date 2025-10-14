@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://de23xyn4tv5uv"]
+
+[ext_resource type="Script" uid="uid://cm8qe1h8ihqqy" path="res://scripts/game_over.gd" id="1_weh2h"]
+[ext_resource type="Texture2D" uid="uid://chvhmief4uv7l" path="res://assets/gameover/invertido.png" id="2_jy0sy"]
+[ext_resource type="Texture2D" uid="uid://k22nwefrxy28" path="res://assets/gameover/retry.png" id="3_5jg82"]
+[ext_resource type="BitMap" uid="uid://dpdxom7wl30t0" path="res://assets/gameover/mascara_retry.png" id="4_jy0sy"]
+[ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="4_lt2b8"]
+
+[node name="GameOverScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_weh2h")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jy0sy")
+
+[node name="Tonte" type="Label" parent="."]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 441.0
+offset_right = 1137.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 72
+text = "ud es tonte"
+
+[node name="Reintentar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_5jg82")
+texture_click_mask = ExtResource("4_jy0sy")
+script = ExtResource("4_lt2b8")
+
+[node name="Texto" type="Label" parent="Reintentar"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 671.0
+offset_right = 1106.0
+offset_bottom = 745.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 54
+text = "reintentar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Reintentar" to="." method="_on_reintentar_pressed"]

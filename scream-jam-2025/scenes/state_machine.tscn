@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c161kl18xdbk1"]
+[gd_scene load_steps=16 format=3 uid="uid://c161kl18xdbk1"]
 
 [ext_resource type="Script" uid="uid://bqnm45w65wo6p" path="res://scripts/state_machine.gd" id="1_nj0rb"]
 [ext_resource type="PackedScene" uid="uid://dot54uqxpvioo" path="res://objects/canvas/shader.tscn" id="2_6rk0d"]
 [ext_resource type="PackedScene" uid="uid://2fn8su01j5da" path="res://scenes/intro_scene.tscn" id="2_a0fpy"]
+[ext_resource type="PackedScene" uid="uid://de23xyn4tv5uv" path="res://scenes/game_over_scene.tscn" id="2_bp2fu"]
 [ext_resource type="PackedScene" uid="uid://vqfi7w7o8lnl" path="res://scenes/credits_scene.tscn" id="3_olh3i"]
 [ext_resource type="PackedScene" uid="uid://dhwq84dhhtp70" path="res://scenes/null_scene.tscn" id="3_s46hd"]
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
@@ -17,9 +18,13 @@
 
 [node name="State Machine" type="Node" node_paths=PackedStringArray("scenes")]
 script = ExtResource("1_nj0rb")
-scenes = [NodePath("Scenes/IntroScene"), NodePath("Scenes/GameScene"), NodePath("Scenes/CreditsScene"), NodePath("Scenes/NullScene")]
+scenes = [NodePath("Scenes/IntroScene"), NodePath("Scenes/GameScene"), NodePath("Scenes/CreditsScene"), NodePath("Scenes/GameOverScene"), NodePath("Scenes/NullScene")]
 
 [node name="Scenes" type="Node" parent="."]
+
+[node name="GameOverScene" parent="Scenes" instance=ExtResource("2_bp2fu")]
+process_mode = 4
+visible = false
 
 [node name="NullScene" parent="Scenes" instance=ExtResource("3_s46hd")]
 process_mode = 4

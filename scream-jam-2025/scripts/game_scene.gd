@@ -19,6 +19,8 @@ func on_enable():
 	pass
 
 func on_disable():
+	Global.desequipar.emit();
+	btn_deselec.texture_normal = mano
 	pass
 
 func _ready() -> void:
@@ -146,9 +148,12 @@ func _actualizar_img(parte):
 			pass
 		0:
 			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
+			Global.intentos -= 1;
 			pass
 		1:
 			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
 			pass
 				
+	if (Global.intentos <= 0):
+		Global.change_scene(Global.Scenes.GAME_OVER)
 	pass
