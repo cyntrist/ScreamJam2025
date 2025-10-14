@@ -95,9 +95,9 @@ func _investigar(parte):
 	if (!Global.input_enabled):
 		return
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
+		Global.parte_seleccionada = parte;
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
-		Global.parte_seleccionada = parte;
 	else: # si ya esta seleccionada se deselecciona
 		_deseleccionar(parte)
 	pass # Replace with function body.
@@ -140,15 +140,15 @@ func _actuar() -> void: # hacer algo en la parte del cuerpo
 
 
 func _actualizar_img(parte):
-	match Global.cuerpo[Global.parte_seleccionada]:
+	match Global.cuerpo[parte]:
 		-1:
 			nodo_evento.get_child(0).texture_normal = spr_evento_base[parte];
 			pass
 		0:
-			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
+			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
 			pass
 		1:
-			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
+			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
 			pass
 				
 	pass
