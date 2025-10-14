@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://srt2ip5x4cdo"
+path="res://.godot/imported/mascara_evento.png-a66ea81d17754a65c68ec1ec2fb1adfe.res"
+
+[deps]
+
+source_file="res://assets/eventos/imagenes/mascara_evento.png"
+dest_files=["res://.godot/imported/mascara_evento.png-a66ea81d17754a65c68ec1ec2fb1adfe.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

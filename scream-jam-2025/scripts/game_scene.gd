@@ -107,9 +107,15 @@ func _feedback(parte):
 	
 func _mostrar_imagen(parte):
 	nodo_evento.visible = true;
-	nodo_evento.get_child(0).texture = spr_imagenes[parte];
+	#nodo_evento.get_child(0).texture = spr_imagenes[parte];
+	nodo_evento.get_child(0).texture_normal = spr_imagenes[parte];
 	pass
 	
 func _deseleccionar(parte):
 	feedback_nodos[parte].visible = false;
 	nodo_evento.visible = false;
+
+### PRESIONADO EVENTO!!!!!!! 
+func _on_imagen_pressed() -> void:
+	print_debug("holaaaah oalaahoaoahao")
+	pass # Replace with function body.

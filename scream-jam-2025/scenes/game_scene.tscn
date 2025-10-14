@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=35 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bryif2ax1071x" path="res://assets/herramientas/selector/desequipar.png" id="18_77hjl"]
 [ext_resource type="BitMap" uid="uid://bu1v1pklrgevf" path="res://assets/herramientas/mascaras de seleccion/mascara_abajo.bmp" id="18_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://dni2i7ygsi5sn" path="res://assets/eventos/imagenes/evento_0.png" id="24_ngbhp"]
+[ext_resource type="BitMap" uid="uid://srt2ip5x4cdo" path="res://assets/eventos/imagenes/mascara_evento.png" id="25_yhpmq"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -193,12 +194,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Imagen" type="TextureRect" parent="Evento"]
+[node name="Imagen" type="TextureButton" parent="Evento"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-texture = ExtResource("24_ngbhp")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+texture_normal = ExtResource("24_ngbhp")
+texture_click_mask = ExtResource("25_yhpmq")
 
 [node name="Borde" type="TextureButton" parent="Evento"]
 layout_mode = 0
@@ -258,6 +260,7 @@ script = ExtResource("16_6aqbo")
 [connection signal="pressed" from="Cuerpo/Partes/Brazo2" to="." method="_on_brazo_2_pressed"]
 [connection signal="pressed" from="Cuerpo/Partes/Pierna1" to="." method="_on_pierna_1_pressed"]
 [connection signal="pressed" from="Cuerpo/Partes/Pierna2" to="." method="_on_pierna_2_pressed"]
+[connection signal="pressed" from="Evento/Imagen" to="." method="_on_imagen_pressed"]
 [connection signal="pressed" from="Herramientas/Arriba" to="." method="_on_arriba_pressed"]
 [connection signal="pressed" from="Herramientas/Abajo" to="." method="_on_abajo_pressed"]
 [connection signal="pressed" from="Herramientas/Deseleccionar" to="." method="_on_equipada_pressed"]
