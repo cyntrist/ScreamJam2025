@@ -45,7 +45,7 @@ mouse_filter = 2
 script = ExtResource("1_w5aja")
 spr_herram = Array[Texture2D]([ExtResource("2_6aqbo"), ExtResource("3_ro0ie"), ExtResource("4_6aqbo"), ExtResource("5_ro0ie"), ExtResource("6_103ce"), ExtResource("7_pb36m")])
 spr_imagenes = Array[Texture2D]([ExtResource("8_r47aq"), ExtResource("9_ngbhp"), ExtResource("10_yhpmq"), ExtResource("11_qlma2"), ExtResource("12_hfwyp"), ExtResource("13_lm11r")])
-feedback_nodos = [NodePath("Cuerpo/Partes/Feedback/Cabeza"), NodePath("Cuerpo/Partes/Feedback/Torso"), NodePath("Cuerpo/Partes/Feedback/Brazo1"), NodePath("Cuerpo/Partes/Feedback/Brazo2"), NodePath("Cuerpo/Partes/Feedback/Pierna1"), NodePath("Cuerpo/Partes/Feedback/Pierna2")]
+feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Torso"), NodePath("Cuerpo/Feedback/Brazo1"), NodePath("Cuerpo/Feedback/Brazo2"), NodePath("Cuerpo/Feedback/Pierna1"), NodePath("Cuerpo/Feedback/Pierna2")]
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -92,57 +92,57 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_bw6k5")
 
-[node name="Partes" type="Control" parent="Cuerpo"]
+[node name="Feedback" type="Control" parent="Cuerpo"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Feedback" type="Control" parent="Cuerpo/Partes"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Cabeza" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Cabeza" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("12_ttvoq")
 
-[node name="Torso" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Torso" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("13_r47aq")
 
-[node name="Brazo1" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Brazo1" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("13_rw4oa")
 
-[node name="Brazo2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Brazo2" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("14_r47aq")
 
-[node name="Pierna1" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Pierna1" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("15_6irsn")
 
-[node name="Pierna2" type="TextureRect" parent="Cuerpo/Partes/Feedback"]
+[node name="Pierna2" type="TextureRect" parent="Cuerpo/Feedback"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("16_gqftm")
+
+[node name="Partes" type="Control" parent="Cuerpo"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0

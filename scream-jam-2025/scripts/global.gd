@@ -30,6 +30,7 @@ enum Partes { CABEZA, TORSO, BRAZO1, BRAZO2, PIERNA1, PIERNA2 }
 var cuerpo = [ -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
 var intentos = 3;
 var desbloq_ultima = false # ultima herramienta desbloqueada
+var input_enabled = true
 
 ## maquina de estados y variables de flujo
 var sm # state machine
@@ -38,7 +39,7 @@ var next_scene = Scenes.INTRO
 var coolDown = 0.5
 var startCoolDown = false
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
-enum Scenes { INTRO, GAME, NULL}
+enum Scenes { INTRO, GAME, CREDITS, NULL}
 
 ## sonido
 var sfx

@@ -10,6 +10,7 @@ func _ready() -> void:
 ## Iniciar fade in
 func transition(speed = 1.0):
 	player.play("fade_in", -1, speed)
+	Global.input_enabled = false;
 
 ## Lo que sea que ocurra cuando acaba una animacion
 ## o sea, justo al acabar ambas partes del fundido 
@@ -18,4 +19,5 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.on_transition_end.emit() # señal 
 		player.play("fade_out") # se inicia el fade out
 	elif anim_name == "fade_out": # la pantalla acaba de volver a mostrarse
+		Global.input_enabled = true;
 		pass # no pasa nada

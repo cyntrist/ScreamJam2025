@@ -88,6 +88,8 @@ func _on_pierna_2_pressed() -> void:
 	pass # Replace with function body.
 
 func _investigar(parte):
+	if (!Global.input_enabled):
+		pass
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
