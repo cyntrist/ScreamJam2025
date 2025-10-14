@@ -153,37 +153,37 @@ offset_bottom = 40.0
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
 offset_left = 157.0
-offset_top = 659.0
-offset_right = 409.0
-offset_bottom = 855.0
+offset_top = 627.0
+offset_right = 441.0
+offset_bottom = 885.0
 
 [node name="Torso" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 655.0
+offset_left = 470.0
+offset_top = 630.0
 offset_right = 961.0
 offset_bottom = 849.0
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 873.0
+offset_left = 815.0
+offset_top = 853.0
 offset_right = 1053.0
-offset_bottom = 1000.0
+offset_bottom = 1012.0
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
 offset_left = 997.0
-offset_top = 722.0
-offset_right = 1265.0
-offset_bottom = 898.0
+offset_top = 687.0
+offset_right = 1274.0
+offset_bottom = 914.0
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 1579.0
-offset_top = 741.0
-offset_right = 1809.0
-offset_bottom = 931.0
+offset_left = 1560.0
+offset_top = 681.0
+offset_right = 1836.0
+offset_bottom = 955.0
 
 [node name="Evento" type="Control" parent="."]
 visible = false
