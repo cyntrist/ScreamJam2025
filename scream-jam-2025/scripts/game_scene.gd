@@ -1,7 +1,6 @@
 extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
-@export var spr_imagenes: Array[Texture2D] = [] # sprites de las partes investigadas
 @export var feedback_nodos: Array[Control] = [] # nodos de los marcos de selección de cada parte
 @onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
 @onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
@@ -9,6 +8,10 @@ extends Scene
 var mano = load("res://assets/herramientas/selector/desequipar.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
 #enum Herramientas { ... } cuando sepamos cuales van a ser
+#sprites de las imagenes a mostrar en base a si estan sin tocar, curadas o jodidas
+@export var spr_evento_base: Array[Texture2D] = [] # sprites de las partes investigadas sin tocar
+@export var spr_evento_curado: Array[Texture2D] = [] # sprites de las partes investigadas curadas
+@export var spr_evento_jodido: Array[Texture2D] = [] # sprites de las partes investigadas jodidas
 
 func on_enable():
 	ind_selec = 0
@@ -69,6 +72,7 @@ func _on_cabeza_pressed() -> void:
 	pass # Replace with function body.
 	
 func _on_torso_pressed() -> void:
+	if (!Global.desbloq_ultima): return
 	_investigar(Global.Partes.TORSO)
 	pass # Replace with function body.
 	
@@ -89,7 +93,7 @@ func _on_pierna_2_pressed() -> void:
 
 func _investigar(parte):
 	if (!Global.input_enabled):
-		pass
+		return
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
@@ -108,8 +112,8 @@ func _feedback(parte):
 	
 func _mostrar_imagen(parte):
 	nodo_evento.visible = true;
-	#nodo_evento.get_child(0).texture = spr_imagenes[parte];
-	nodo_evento.get_child(0).texture_normal = spr_imagenes[parte];
+	#nodo_evento.get_child(0).texture = spr_evento_base[parte];
+	_actualizar_img(parte)
 	pass
 	
 func _deseleccionar(parte):
@@ -122,8 +126,8 @@ func _on_imagen_pressed() -> void:
 	if (Global.cuerpo[Global.parte_seleccionada] == -1): # si no hay nada seleccionado no hay nada que hacer
 		if (Global.herram_equipada != -1): # si estas intentando hacer algo
 			_actuar();
-		else: # si ya se ha hecho algo muestra el qué por consola
-			print_debug("Estás usando la mano y la parte está a -1")
+		#else: # si ya se ha hecho algo muestra el qué por consola
+			#print_debug("Estás usando la mano y la parte está a -1")
 	else:
 		print_debug("La parte está a: ", Global.cuerpo[Global.parte_seleccionada])
 
@@ -132,3 +136,19 @@ func _actuar() -> void: # hacer algo en la parte del cuerpo
 		Global.cuerpo[Global.parte_seleccionada] = 1 
 	else:
 		Global.cuerpo[Global.parte_seleccionada] = 0
+	_actualizar_img(Global.parte_seleccionada)
+
+
+func _actualizar_img(parte):
+	match Global.cuerpo[Global.parte_seleccionada]:
+		-1:
+			nodo_evento.get_child(0).texture_normal = spr_evento_base[parte];
+			pass
+		0:
+			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
+			pass
+		1:
+			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
+			pass
+				
+	pass

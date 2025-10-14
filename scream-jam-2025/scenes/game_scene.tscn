@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=47 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -24,15 +24,27 @@
 [ext_resource type="Texture2D" uid="uid://bgsnqqbkaqu78" path="res://assets/feedback/investigar_torso.png" id="13_r47aq"]
 [ext_resource type="Texture2D" uid="uid://b12nd55woemo0" path="res://assets/feedback/investigar_brazo.png" id="13_rw4oa"]
 [ext_resource type="Texture2D" uid="uid://bwqp6852tkknr" path="res://assets/feedback/investigar_antebrazo.png" id="14_r47aq"]
+[ext_resource type="Texture2D" uid="uid://dcl03xxuyqact" path="res://assets/eventos/imagenes/curadas/evento_1_curado.png" id="14_ww6lu"]
 [ext_resource type="Texture2D" uid="uid://d2622bkvf152" path="res://assets/feedback/investigar_muslo.png" id="15_6irsn"]
+[ext_resource type="Texture2D" uid="uid://j4qbkpedht40" path="res://assets/eventos/imagenes/curadas/evento_2_curado.png" id="15_584by"]
 [ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="16_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://cdl60gf3ll6cx" path="res://assets/feedback/investigar_pierna.png" id="16_gqftm"]
 [ext_resource type="BitMap" uid="uid://cptt3q6sy5msw" path="res://assets/herramientas/mascaras de seleccion/mascara_seleccion.png" id="16_ro0ie"]
+[ext_resource type="Texture2D" uid="uid://6vxisuqhl3l6" path="res://assets/eventos/imagenes/curadas/evento_3_curado.png" id="16_v7uyc"]
+[ext_resource type="Texture2D" uid="uid://bunmnqy3hhtxi" path="res://assets/eventos/imagenes/curadas/evento_4_curado.png" id="17_cjr1f"]
 [ext_resource type="Texture2D" uid="uid://cklcly5hmdiov" path="res://assets/herramientas/selector/abajo.png" id="17_ro0ie"]
 [ext_resource type="BitMap" uid="uid://ww7iyiuqsagx" path="res://assets/herramientas/mascaras de seleccion/mascara_deseleccion.png" id="18_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://bryif2ax1071x" path="res://assets/herramientas/selector/desequipar.png" id="18_77hjl"]
+[ext_resource type="Texture2D" uid="uid://e03eokxm4fmc" path="res://assets/eventos/imagenes/curadas/evento_5_curado.png" id="18_nlhev"]
 [ext_resource type="BitMap" uid="uid://bu1v1pklrgevf" path="res://assets/herramientas/mascaras de seleccion/mascara_abajo.bmp" id="18_ro0ie"]
+[ext_resource type="Texture2D" uid="uid://bkq27usfkxfc" path="res://assets/eventos/imagenes/curadas/evento_6_curado.png" id="19_4gycw"]
+[ext_resource type="Texture2D" uid="uid://c8cfp5r8g5tfk" path="res://assets/eventos/imagenes/jodidas/evento_1_jodido.png" id="20_fet82"]
+[ext_resource type="Texture2D" uid="uid://b7wuk8noxsvfg" path="res://assets/eventos/imagenes/jodidas/evento_2_jodido.png" id="21_reh8g"]
+[ext_resource type="Texture2D" uid="uid://c7f05v888tn2u" path="res://assets/eventos/imagenes/jodidas/evento_3_jodido.png" id="22_4558e"]
+[ext_resource type="Texture2D" uid="uid://ps6g4jh6g1f6" path="res://assets/eventos/imagenes/jodidas/evento_4_jodido.png" id="23_1mrcw"]
+[ext_resource type="Texture2D" uid="uid://cf12n5t64ccr8" path="res://assets/eventos/imagenes/jodidas/evento_5_jodido.png" id="24_4har0"]
 [ext_resource type="Texture2D" uid="uid://dni2i7ygsi5sn" path="res://assets/eventos/imagenes/evento_0.png" id="24_ngbhp"]
+[ext_resource type="Texture2D" uid="uid://dsd5roa7d0xtg" path="res://assets/eventos/imagenes/jodidas/evento_6_jodido.png" id="25_n4qu0"]
 [ext_resource type="BitMap" uid="uid://srt2ip5x4cdo" path="res://assets/eventos/imagenes/mascara_evento.png" id="25_yhpmq"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
@@ -45,8 +57,10 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
 spr_herram = Array[Texture2D]([ExtResource("2_6aqbo"), ExtResource("3_ro0ie"), ExtResource("4_6aqbo"), ExtResource("5_ro0ie"), ExtResource("6_103ce"), ExtResource("7_pb36m")])
-spr_imagenes = Array[Texture2D]([ExtResource("8_yhpmq"), ExtResource("9_qlma2"), ExtResource("10_hfwyp"), ExtResource("11_lm11r"), ExtResource("12_ct2tn"), ExtResource("13_p5o0s")])
 feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Brazo1"), NodePath("Cuerpo/Feedback/Brazo2"), NodePath("Cuerpo/Feedback/Pierna1"), NodePath("Cuerpo/Feedback/Pierna2"), NodePath("Cuerpo/Feedback/Torso")]
+spr_evento_base = Array[Texture2D]([ExtResource("8_yhpmq"), ExtResource("9_qlma2"), ExtResource("10_hfwyp"), ExtResource("11_lm11r"), ExtResource("12_ct2tn"), ExtResource("13_p5o0s")])
+spr_evento_curado = Array[Texture2D]([ExtResource("14_ww6lu"), ExtResource("15_584by"), ExtResource("16_v7uyc"), ExtResource("17_cjr1f"), ExtResource("18_nlhev"), ExtResource("19_4gycw")])
+spr_evento_jodido = Array[Texture2D]([ExtResource("20_fet82"), ExtResource("21_reh8g"), ExtResource("22_4558e"), ExtResource("23_1mrcw"), ExtResource("24_4har0"), ExtResource("25_n4qu0")])
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
