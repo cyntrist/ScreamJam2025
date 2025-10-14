@@ -10,17 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://cnc50f8n2xoid" path="res://assets/herramientas/selector/4.png" id="5_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://ntraa1gmvhd7" path="res://assets/herramientas/selector/5.png" id="6_103ce"]
 [ext_resource type="Texture2D" uid="uid://b747y7aicinbo" path="res://assets/herramientas/selector/6.png" id="7_pb36m"]
-[ext_resource type="Texture2D" uid="uid://unqt6eyhfv2e" path="res://assets/eventos/imagenes/evento_1.png" id="8_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dj6owog1ucjyy" path="res://assets/eventos/persona.png" id="8_ro0ie"]
+[ext_resource type="Texture2D" uid="uid://unqt6eyhfv2e" path="res://assets/eventos/imagenes/base/evento_1.png" id="8_yhpmq"]
 [ext_resource type="Texture2D" uid="uid://ct0pkyuhxrx3k" path="res://assets/eventos/burbuja.png" id="9_103ce"]
-[ext_resource type="Texture2D" uid="uid://cpbmainrpqjq1" path="res://assets/eventos/imagenes/evento_2.png" id="9_ngbhp"]
-[ext_resource type="Texture2D" uid="uid://qiwgh26ro3ov" path="res://assets/eventos/imagenes/evento_3.png" id="10_yhpmq"]
-[ext_resource type="Texture2D" uid="uid://c5i37cwohn3nt" path="res://assets/eventos/imagenes/evento_4.png" id="11_qlma2"]
+[ext_resource type="Texture2D" uid="uid://cpbmainrpqjq1" path="res://assets/eventos/imagenes/base/evento_2.png" id="9_qlma2"]
+[ext_resource type="Texture2D" uid="uid://qiwgh26ro3ov" path="res://assets/eventos/imagenes/base/evento_3.png" id="10_hfwyp"]
+[ext_resource type="Texture2D" uid="uid://c5i37cwohn3nt" path="res://assets/eventos/imagenes/base/evento_4.png" id="11_lm11r"]
 [ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/selector/arriba.png" id="12_6aqbo"]
-[ext_resource type="Texture2D" uid="uid://cpje1qt4krj6k" path="res://assets/eventos/imagenes/evento_5.png" id="12_hfwyp"]
+[ext_resource type="Texture2D" uid="uid://cpje1qt4krj6k" path="res://assets/eventos/imagenes/base/evento_5.png" id="12_ct2tn"]
 [ext_resource type="Texture2D" uid="uid://cbqopl173ifcn" path="res://assets/feedback/investigar_cabeza.png" id="12_ttvoq"]
 [ext_resource type="BitMap" uid="uid://corv0lpxqk6v5" path="res://assets/herramientas/mascaras de seleccion/mascara_arriba.png" id="13_6aqbo"]
-[ext_resource type="Texture2D" uid="uid://e2di0gbr7i2c" path="res://assets/eventos/imagenes/evento_6.png" id="13_lm11r"]
+[ext_resource type="Texture2D" uid="uid://e2di0gbr7i2c" path="res://assets/eventos/imagenes/base/evento_6.png" id="13_p5o0s"]
 [ext_resource type="Texture2D" uid="uid://bgsnqqbkaqu78" path="res://assets/feedback/investigar_torso.png" id="13_r47aq"]
 [ext_resource type="Texture2D" uid="uid://b12nd55woemo0" path="res://assets/feedback/investigar_brazo.png" id="13_rw4oa"]
 [ext_resource type="Texture2D" uid="uid://bwqp6852tkknr" path="res://assets/feedback/investigar_antebrazo.png" id="14_r47aq"]
@@ -45,8 +45,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
 spr_herram = Array[Texture2D]([ExtResource("2_6aqbo"), ExtResource("3_ro0ie"), ExtResource("4_6aqbo"), ExtResource("5_ro0ie"), ExtResource("6_103ce"), ExtResource("7_pb36m")])
-spr_imagenes = Array[Texture2D]([ExtResource("8_r47aq"), ExtResource("9_ngbhp"), ExtResource("10_yhpmq"), ExtResource("11_qlma2"), ExtResource("12_hfwyp"), ExtResource("13_lm11r")])
-feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Torso"), NodePath("Cuerpo/Feedback/Brazo1"), NodePath("Cuerpo/Feedback/Brazo2"), NodePath("Cuerpo/Feedback/Pierna1"), NodePath("Cuerpo/Feedback/Pierna2")]
+spr_imagenes = Array[Texture2D]([ExtResource("8_yhpmq"), ExtResource("9_qlma2"), ExtResource("10_hfwyp"), ExtResource("11_lm11r"), ExtResource("12_ct2tn"), ExtResource("13_p5o0s")])
+feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Brazo1"), NodePath("Cuerpo/Feedback/Brazo2"), NodePath("Cuerpo/Feedback/Pierna1"), NodePath("Cuerpo/Feedback/Pierna2"), NodePath("Cuerpo/Feedback/Torso")]
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -139,6 +139,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("16_gqftm")
+metadata/_edit_group_ = true
 
 [node name="Partes" type="Control" parent="Cuerpo"]
 anchors_preset = 0

@@ -22,13 +22,14 @@ signal desequipar()
 
 ## lógica del juego
 # herramientas
-var seleccionada = 0
-var equipada = -1 
+var herram_seleccionada = 0
+var herram_equipada = -1 
 # flujo e inspeccion
-var mensaje_actual = 0; # menasej a mostrar
-enum Partes { CABEZA, TORSO, BRAZO1, BRAZO2, PIERNA1, PIERNA2 }
-var cuerpo = [ -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
+enum Partes { CABEZA, BRAZO1, BRAZO2, PIERNA1, PIERNA2, TORSO}
+var cuerpo = [ -1, -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
+var solucion = [ 0, 1, 2, 3, 4, 5] # LA HERRAMIENTA QUE LE TOCA A CADA PARTE DEL CUERPO PARA QUE ESTSÉ BIEN
 var intentos = 3;
+var parte_seleccionada = -1 # parte que se está investigando ahora mismo, de 0 a 5 y si es -1 no es ninguna
 var desbloq_ultima = false # ultima herramienta desbloqueada
 var input_enabled = true
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpje1qt4krj6k"
-path="res://.godot/imported/evento_5.png-ef15b8452a6960676aecdd5c785cee9c.ctex"
+uid="uid://qiwgh26ro3ov"
+path="res://.godot/imported/evento_3.png-bb53b6eed3a6cc04a2957c25b1c9710f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eventos/imagenes/evento_5.png"
-dest_files=["res://.godot/imported/evento_5.png-ef15b8452a6960676aecdd5c785cee9c.ctex"]
+source_file="res://assets/eventos/imagenes/base/evento_3.png"
+dest_files=["res://.godot/imported/evento_3.png-bb53b6eed3a6cc04a2957c25b1c9710f.ctex"]
 
 [params]
 

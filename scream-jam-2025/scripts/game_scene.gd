@@ -93,6 +93,7 @@ func _investigar(parte):
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
+		Global.parte_seleccionada = parte;
 	else: # si ya esta seleccionada se deselecciona
 		_deseleccionar(parte)
 	pass # Replace with function body.
@@ -112,10 +113,22 @@ func _mostrar_imagen(parte):
 	pass
 	
 func _deseleccionar(parte):
+	Global.parte_seleccionada = -1;
 	feedback_nodos[parte].visible = false;
 	nodo_evento.visible = false;
 
 ### PRESIONADO EVENTO!!!!!!! 
 func _on_imagen_pressed() -> void:
-	print_debug("holaaaah oalaahoaoahao")
-	pass # Replace with function body.
+	if (Global.cuerpo[Global.parte_seleccionada] == -1): # si no hay nada seleccionado no hay nada que hacer
+		if (Global.herram_equipada != -1): # si estas intentando hacer algo
+			_actuar();
+		else: # si ya se ha hecho algo muestra el qué por consola
+			print_debug("Estás usando la mano y la parte está a -1")
+	else:
+		print_debug("La parte está a: ", Global.cuerpo[Global.parte_seleccionada])
+
+func _actuar() -> void: # hacer algo en la parte del cuerpo
+	if (Global.herram_seleccionada == Global.solucion[Global.parte_seleccionada]):
+		Global.cuerpo[Global.parte_seleccionada] = 1 
+	else:
+		Global.cuerpo[Global.parte_seleccionada] = 0

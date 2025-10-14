@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e2di0gbr7i2c"
-path="res://.godot/imported/evento_6.png-8d2d392ca83843ae5a88b46c5395136c.ctex"
+uid="uid://c7f05v888tn2u"
+path="res://.godot/imported/evento_3_jodido.png-8344e200f4eb12c7386c9ecf7047b331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eventos/imagenes/evento_6.png"
-dest_files=["res://.godot/imported/evento_6.png-8d2d392ca83843ae5a88b46c5395136c.ctex"]
+source_file="res://assets/eventos/imagenes/jodidas/evento_3_jodido.png"
+dest_files=["res://.godot/imported/evento_3_jodido.png-8344e200f4eb12c7386c9ecf7047b331.ctex"]
 
 [params]
 
