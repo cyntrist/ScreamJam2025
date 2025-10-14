@@ -8,17 +8,11 @@ mecanicas:
     > mostrar cambio en el cuerpo
     > conversaciones
 
-sonido:
-    > sfx
-    > ambiente / musica
+guión
 
-intro
+sonido
 
-dialogos
-
-respiración etc
-
-buscar fuentes chulas
+respiración 
 
 pensar un nombre
 
