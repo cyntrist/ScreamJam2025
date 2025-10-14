@@ -3,14 +3,16 @@ hola nieves te quiero
 sin contar arte esto es lo que he pensado que queda por hacer
 
 mecanicas:
-    > 4 partes en vez de 5
-    > llegar a hacer todo en el cuerpo antes de gameover
     > mostrar cambio en el cuerpo
     > conversaciones
 
 sonido:
     > sfx
     > ambiente / musica
+
+intro
+
+dialogos
 
 respiración etc
 
