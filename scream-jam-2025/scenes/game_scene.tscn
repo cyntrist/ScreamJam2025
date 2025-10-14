@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
-[ext_resource type="Texture2D" uid="uid://bueab70n6uw07" path="res://assets/cuerpo_ph.png" id="2_bw6k5"]
 [ext_resource type="Texture2D" uid="uid://cyqd2dgstrhy3" path="res://assets/UI.png" id="2_onqr8"]
 [ext_resource type="Texture2D" uid="uid://dk6kqp1ypjpsp" path="res://assets/evento.png" id="2_ycayy"]
 [ext_resource type="Texture2D" uid="uid://opqy7htrrxou" path="res://assets/herramientas/selector/2.png" id="3_ro0ie"]
@@ -44,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dni2i7ygsi5sn" path="res://assets/eventos/imagenes/evento_0.png" id="24_ngbhp"]
 [ext_resource type="Texture2D" uid="uid://dsd5roa7d0xtg" path="res://assets/eventos/imagenes/jodidas/evento_6_jodido.png" id="25_n4qu0"]
 [ext_resource type="BitMap" uid="uid://srt2ip5x4cdo" path="res://assets/eventos/imagenes/mascara_evento.png" id="25_yhpmq"]
+[ext_resource type="Texture2D" uid="uid://x1o6bcin0tl7" path="res://assets/cuerpo_manta.png" id="28_qlrfd"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -103,7 +103,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_bw6k5")
+texture = ExtResource("28_qlrfd")
 
 [node name="Feedback" type="Control" parent="Cuerpo"]
 anchors_preset = 0
@@ -166,21 +166,21 @@ offset_bottom = 849.0
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 595.0
-offset_top = 838.0
-offset_right = 1066.0
+offset_left = 830.0
+offset_top = 873.0
+offset_right = 1053.0
 offset_bottom = 1000.0
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 852.0
-offset_top = 738.0
-offset_right = 1246.0
+offset_left = 997.0
+offset_top = 722.0
+offset_right = 1265.0
 offset_bottom = 898.0
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
-offset_left = 1308.0
+offset_left = 1579.0
 offset_top = 741.0
 offset_right = 1809.0
 offset_bottom = 931.0

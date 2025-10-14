@@ -13,7 +13,7 @@ extends Scene
 @onready var cuerpo = $Cuerpo/Base
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
-var cuerpo_desvelado = load("res://assets/cuerpo_desvelado.png")
+var cuerpo_desvelado = load("res://assets/cuerpo_single.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 
@@ -201,4 +201,5 @@ func _acabar_o_no():
 		
 func _desvelar_cuerpo():
 	cuerpo.texture = cuerpo_desvelado;
+	_deseleccionar(Global.parte_seleccionada)
 	
