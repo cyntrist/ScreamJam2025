@@ -18,10 +18,11 @@ signal desequipar()
 var herram_seleccionada = 0
 var herram_equipada = -1 
 # flujo e inspeccion
-enum Partes { CABEZA, BRAZO1, BRAZO2, PIERNA1, PIERNA2, TORSO}
-var cuerpo = [ -1, -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
-var solucion = [ 0, 1, 2, 3, 4, 5] # LA HERRAMIENTA QUE LE TOCA A CADA PARTE DEL CUERPO PARA QUE ESTSÉ BIEN
+enum Partes { CABEZA, MANO, MUSLO, PIE, TORSO}
+var cuerpo = [ -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
+var solucion = [ 0, 1, 2, 3, 4] # LA HERRAMIENTA QUE LE TOCA A CADA PARTE DEL CUERPO PARA QUE ESTSÉ BIEN
 var intentos = 3;
+var partes_actuadas = 0 # cuantas son las partes sobre las que se han actuado ya (esto es solo para evitar un for)
 var parte_seleccionada = -1 # parte que se está investigando ahora mismo, de 0 a 5 y si es -1 no es ninguna
 var desbloq_ultima = false # ultima herramienta desbloqueada
 var input_enabled = true

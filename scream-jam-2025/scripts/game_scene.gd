@@ -2,16 +2,20 @@ extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
 @export var feedback_nodos: Array[Control] = [] # nodos de los marcos de selección de cada parte
-@onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
-@onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
-@onready var nodo_evento = $Evento
-var mano = load("res://assets/herramientas/selector/desequipar.png")
-var ind_selec = 0; # indice de la herramienta seleccionada
-#enum Herramientas { ... } cuando sepamos cuales van a ser
 #sprites de las imagenes a mostrar en base a si estan sin tocar, curadas o jodidas
 @export var spr_evento_base: Array[Texture2D] = [] # sprites de las partes investigadas sin tocar
 @export var spr_evento_curado: Array[Texture2D] = [] # sprites de las partes investigadas curadas
 @export var spr_evento_jodido: Array[Texture2D] = [] # sprites de las partes investigadas jodidas
+
+@onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
+@onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
+@onready var nodo_evento = $Evento
+@onready var cuerpo = $Cuerpo/Base
+
+var mano = load("res://assets/herramientas/selector/desequipar.png")
+var cuerpo_desvelado = load("res://assets/cuerpo_desvelado.png")
+var ind_selec = 0; # indice de la herramienta seleccionada
+#enum Herramientas { ... } cuando sepamos cuales van a ser
 
 func on_enable():
 	ind_selec = 0
@@ -49,6 +53,10 @@ func _on_abajo_pressed() -> void:
 	var maxI = spr_herram.size() - 1
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
 		maxI -= 1;
+	else:  # AL FINAL NO PUEDES FALLAR!!
+		ind_selec = 4;
+		btn_selec.texture_normal = spr_herram[ind_selec]
+		return;
 	if (ind_selec < 0):
 		ind_selec = maxI;
 	btn_selec.texture_normal = spr_herram[ind_selec]
@@ -60,6 +68,9 @@ func _on_arriba_pressed() -> void:
 	var maxI = spr_herram.size()
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
 		maxI -= 1;
+	else: # AL FINAL NO PUEDES FALLAR!!
+		_herramienta_final()
+		return;
 	if (ind_selec >= maxI):
 		ind_selec = 0;
 	btn_selec.texture_normal = spr_herram[ind_selec]
@@ -77,6 +88,15 @@ func _on_equipada_pressed() -> void:
 	btn_deselec.texture_normal = mano
 	pass # Replace with function body.
 
+func _herramienta_final():
+	ind_selec = 4;
+	btn_selec.texture_normal = spr_herram[ind_selec]
+	btn_deselec.texture_normal = spr_herram[ind_selec]
+	Global.equipar_herramienta.emit(ind_selec)
+	Global.desequipar.emit()
+	$Herramientas/Arriba.visible = false
+	$Herramientas/Abajo.visible = false
+	
 
 
 
@@ -90,19 +110,16 @@ func _on_torso_pressed() -> void:
 	_investigar(Global.Partes.TORSO)
 	pass # Replace with function body.
 	
-func _on_brazo_1_pressed() -> void:
-	_investigar(Global.Partes.BRAZO1)
-	pass # Replace with function body.
 func _on_brazo_2_pressed() -> void:
-	_investigar(Global.Partes.BRAZO2)
+	_investigar(Global.Partes.MANO)
 	pass # Replace with function body.
 
 
 func _on_pierna_1_pressed() -> void:
-	_investigar(Global.Partes.PIERNA1)
+	_investigar(Global.Partes.MUSLO)
 	pass # Replace with function body.
 func _on_pierna_2_pressed() -> void:
-	_investigar(Global.Partes.PIERNA2)
+	_investigar(Global.Partes.PIE)
 	pass # Replace with function body.
 
 func _investigar(parte):
@@ -135,6 +152,8 @@ func _deseleccionar(parte):
 	feedback_nodos[parte].visible = false;
 	nodo_evento.visible = false;
 
+
+
 ### PRESIONADO EVENTO!!!!!!! 
 func _on_imagen_pressed() -> void:
 	if (Global.cuerpo[Global.parte_seleccionada] == -1): # si no hay nada seleccionado no hay nada que hacer
@@ -151,9 +170,9 @@ func _actuar() -> void: # hacer algo en la parte del cuerpo
 	else:
 		Global.cuerpo[Global.parte_seleccionada] = 0
 		Global.intentos -= 1;
-		if (Global.intentos <= 0):
-			Global.change_scene(Global.Scenes.GAME_OVER)
+	Global.partes_actuadas += 1;
 	_actualizar_img(Global.parte_seleccionada)
+	_acabar_o_no(); 
 
 
 func _actualizar_img(parte):
@@ -168,3 +187,18 @@ func _actualizar_img(parte):
 			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
 			pass
 	pass
+
+
+
+# gestion
+func _acabar_o_no():
+	if (Global.partes_actuadas >= 4):
+		if (Global.intentos >= 0):
+			Global.desbloq_ultima = true;
+			_herramienta_final() #para que se actualice la herramienta
+			_desvelar_cuerpo()
+	pass;
+		
+func _desvelar_cuerpo():
+	cuerpo.texture = cuerpo_desvelado;
+	
