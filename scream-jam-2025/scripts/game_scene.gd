@@ -91,7 +91,7 @@ func _on_equipada_pressed() -> void:
 func _herramienta_final():
 	ind_selec = 4;
 	btn_selec.texture_normal = spr_herram[ind_selec]
-	btn_deselec.texture_normal = spr_herram[ind_selec]
+	btn_deselec.texture_normal = mano
 	Global.equipar_herramienta.emit(ind_selec)
 	Global.desequipar.emit()
 	$Herramientas/Arriba.visible = false
