@@ -16,6 +16,18 @@ var ind_selec = 0; # indice de la herramienta seleccionada
 func on_enable():
 	ind_selec = 0
 	btn_selec.texture_normal = spr_herram[ind_selec]
+	
+	# para que el retry vaya bien
+	Global.herram_equipada = -1;
+	Global.herram_seleccionada = 0;
+	Global.intentos = 3;
+	Global.parte_seleccionada = -1 # parte que se está investigando ahora mismo, de 0 a 5 y si es -1 no es ninguna
+	Global.desbloq_ultima = false # ultima herramienta desbloqueada
+	Global.input_enabled = true
+	Global.cuerpo = [ -1, -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
+	for nodo in feedback_nodos:
+		nodo.visible = false;
+	nodo_evento.visible = false;
 	pass
 
 func on_disable():
@@ -138,6 +150,9 @@ func _actuar() -> void: # hacer algo en la parte del cuerpo
 		Global.cuerpo[Global.parte_seleccionada] = 1 
 	else:
 		Global.cuerpo[Global.parte_seleccionada] = 0
+		Global.intentos -= 1;
+		if (Global.intentos <= 0):
+			Global.change_scene(Global.Scenes.GAME_OVER)
 	_actualizar_img(Global.parte_seleccionada)
 
 
@@ -148,12 +163,9 @@ func _actualizar_img(parte):
 			pass
 		0:
 			nodo_evento.get_child(0).texture_normal = spr_evento_jodido[parte];
-			Global.intentos -= 1;
+			
 			pass
 		1:
 			nodo_evento.get_child(0).texture_normal = spr_evento_curado[parte];
 			pass
-				
-	if (Global.intentos <= 0):
-		Global.change_scene(Global.Scenes.GAME_OVER)
 	pass
