@@ -29,6 +29,7 @@ func on_enable():
 	Global.herram_equipada = -1;
 	Global.herram_seleccionada = 0;
 	Global.intentos = 3;
+	Global.partes_actuadas = 0;
 	Global.parte_seleccionada = -1 # parte que se está investigando ahora mismo, de 0 a 5 y si es -1 no es ninguna
 	Global.desbloq_ultima = false # ultima herramienta desbloqueada
 	Global.input_enabled = true
@@ -36,6 +37,8 @@ func on_enable():
 	for nodo in feedback_nodos:
 		nodo.visible = false;
 	nodo_evento.visible = false;
+	for child in consecuencias.get_children():
+		child.texture = null
 	pass
 
 func on_disable():
@@ -198,10 +201,14 @@ func _actualizar_img(parte):
 
 # gestion
 func _acabar_o_no():
-	if (Global.partes_actuadas >= 4 and Global.intentos >= 0 and !Global.desbloq_ultima):
-		Global.desbloq_ultima = true;
-		_herramienta_final() #para que se actualice la herramienta
-		_desvelar_cuerpo()
+	if (Global.partes_actuadas >= 4):
+		if (Global.intentos > 0):
+			if (!Global.desbloq_ultima):
+				Global.desbloq_ultima = true;
+				_herramienta_final() #para que se actualice la herramienta
+				_desvelar_cuerpo()
+		else: # TODO: conversación game over
+			Global.change_scene(Global.Scenes.GAME_OVER)
 	pass;
 		
 func _desvelar_cuerpo():
