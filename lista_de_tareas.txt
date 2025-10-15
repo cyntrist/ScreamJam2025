@@ -2,14 +2,13 @@ hola nieves te quiero
 
 hola cynthia yo a ti también
 
-mecanicas:
-    > mostrar cambio en el cuerpo
-    > conversaciones y flujo general
-    > respiración
-
-guión
-
-sonido
+prioridades:
+    > conversaciones y flujo general, tweens
+    > guion
+    > sonido
+    > reemplazar y reencajar arte
+    > respiración?
+    > pulir todo lo pulible
 
 
 
