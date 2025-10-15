@@ -36,7 +36,7 @@ func _input(_event):
 		if Input.is_action_just_pressed("Click"):
 			self.modulate = clicked_color
 		elif Input.is_action_just_released("Click"):
-			if dentro:
-				self.modulate = hover_color;
-			else:
-				self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			#if dentro:
+					#self.modulate = hover_color;
+			#else:
+			self.modulate = Color(1.0, 1.0, 1.0, 1.0)

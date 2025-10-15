@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bh3ah8uc610ae"
+path="res://.godot/imported/investigar_pierna.png-6b4062c54c008f8fe499b5c0dcd51abd.res"
+
+[deps]
+
+source_file="res://assets/feedback/mascaras/investigar_pierna.png"
+dest_files=["res://.godot/imported/investigar_pierna.png-6b4062c54c008f8fe499b5c0dcd51abd.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

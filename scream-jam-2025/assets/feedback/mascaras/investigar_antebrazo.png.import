@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bcd3y3pxepogu"
+path="res://.godot/imported/investigar_antebrazo.png-c847f9dd7d940f97cc845a481cf3067d.res"
+
+[deps]
+
+source_file="res://assets/feedback/mascaras/investigar_antebrazo.png"
+dest_files=["res://.godot/imported/investigar_antebrazo.png-c847f9dd7d940f97cc845a481cf3067d.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

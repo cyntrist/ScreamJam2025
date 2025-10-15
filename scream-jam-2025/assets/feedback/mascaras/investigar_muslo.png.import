@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cc2jpjh4kwgwy"
+path="res://.godot/imported/investigar_muslo.png-f5fde6a22a63784a07174039742b6dc1.res"
+
+[deps]
+
+source_file="res://assets/feedback/mascaras/investigar_muslo.png"
+dest_files=["res://.godot/imported/investigar_muslo.png-f5fde6a22a63784a07174039742b6dc1.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

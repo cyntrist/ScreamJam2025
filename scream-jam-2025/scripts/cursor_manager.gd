@@ -30,7 +30,6 @@ func _desequipar_herramienta():
 	pass
 	
 func _input(_event):
-	print_debug(Global.input_enabled)
 	if desequipada:
 		if Input.is_action_just_pressed("Click"):
 			Input.set_custom_mouse_cursor(mano_clic)

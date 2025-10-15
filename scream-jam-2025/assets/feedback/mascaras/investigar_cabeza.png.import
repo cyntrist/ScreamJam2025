@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bsovv55munh6p"
+path="res://.godot/imported/investigar_cabeza.png-04c787a0d4dd72152b26fb8bbe8a773a.res"
+
+[deps]
+
+source_file="res://assets/feedback/mascaras/investigar_cabeza.png"
+dest_files=["res://.godot/imported/investigar_cabeza.png-04c787a0d4dd72152b26fb8bbe8a773a.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Canilari Canilari';
+    src: url('Canilari-Ornaments.eot');
+    src: local('Canilari Ornaments'), local('Canilari-Ornaments'),
+        url('Canilari-Ornaments.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-Ornaments.woff2') format('woff2'),
+        url('Canilari-Ornaments.woff') format('woff'),
+        url('Canilari-Ornaments.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canilari STD';
+    src: url('Canilari-PROHeavyItalic.eot');
+    src: local('Canilari PRO Heavy Italic'), local('Canilari-PROHeavyItalic'),
+        url('Canilari-PROHeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROHeavyItalic.woff2') format('woff2'),
+        url('Canilari-PROHeavyItalic.woff') format('woff'),
+        url('Canilari-PROHeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Canilari PRO';
+    src: url('Canilari-PROBold.eot');
+    src: local('Canilari PRO Bold'), local('Canilari-PROBold'),
+        url('Canilari-PROBold.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROBold.woff2') format('woff2'),
+        url('Canilari-PROBold.woff') format('woff'),
+        url('Canilari-PROBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canilari PRO';
+    src: url('Canilari-PRO.eot');
+    src: local('Canilari PRO'), local('Canilari-PRO'),
+        url('Canilari-PRO.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PRO.woff2') format('woff2'),
+        url('Canilari-PRO.woff') format('woff'),
+        url('Canilari-PRO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canilari Canilari';
+    src: url('Canilari-PROMediumItalic.eot');
+    src: local('Canilari PRO Medium Italic'), local('Canilari-PROMediumItalic'),
+        url('Canilari-PROMediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROMediumItalic.woff2') format('woff2'),
+        url('Canilari-PROMediumItalic.woff') format('woff'),
+        url('Canilari-PROMediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Canilari PRO';
+    src: url('Canilari-PROMedium.eot');
+    src: local('Canilari PRO Medium'), local('Canilari-PROMedium'),
+        url('Canilari-PROMedium.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROMedium.woff2') format('woff2'),
+        url('Canilari-PROMedium.woff') format('woff'),
+        url('Canilari-PROMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canilari Negra';
+    src: url('Canilari-PROHeavy.eot');
+    src: local('Canilari PRO Heavy'), local('Canilari-PROHeavy'),
+        url('Canilari-PROHeavy.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROHeavy.woff2') format('woff2'),
+        url('Canilari-PROHeavy.woff') format('woff'),
+        url('Canilari-PROHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canilari Canilari';
+    src: url('Canilari-PRORegularItalic.eot');
+    src: local('Canilari PRO Regular Italic'), local('Canilari-PRORegularItalic'),
+        url('Canilari-PRORegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PRORegularItalic.woff2') format('woff2'),
+        url('Canilari-PRORegularItalic.woff') format('woff'),
+        url('Canilari-PRORegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Canilari Canilari';
+    src: url('Canilari-PROBoldItalic.eot');
+    src: local('Canilari PRO Bold Italic'), local('Canilari-PROBoldItalic'),
+        url('Canilari-PROBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Canilari-PROBoldItalic.woff2') format('woff2'),
+        url('Canilari-PROBoldItalic.woff') format('woff'),
+        url('Canilari-PROBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+

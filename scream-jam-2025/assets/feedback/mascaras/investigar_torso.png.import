@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c08cj76srof02"
+path="res://.godot/imported/investigar_torso.png-54e7742e155c2ea657ab2c108d577f47.res"
+
+[deps]
+
+source_file="res://assets/feedback/mascaras/investigar_torso.png"
+dest_files=["res://.godot/imported/investigar_torso.png-54e7742e155c2ea657ab2c108d577f47.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

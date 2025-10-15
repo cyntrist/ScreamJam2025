@@ -132,11 +132,14 @@ func _on_pierna_2_pressed() -> void:
 func _investigar(parte):
 	if (!Global.input_enabled):
 		return
+	#for nodo in feedback_nodos:
+		#print_debug(nodo.visible)
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
 		Global.parte_seleccionada = parte;
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
 	else: # si ya esta seleccionada se deselecciona
+		print_debug("holaa")
 		_deseleccionar(parte)
 	pass # Replace with function body.
 
@@ -216,3 +219,8 @@ func _desvelar_cuerpo():
 	manta.visible = false;
 	_deseleccionar(Global.parte_seleccionada)
 	
+
+
+func _on_feedback_pressed() -> void:
+	_deseleccionar(Global.parte_seleccionada)
+	pass # Replace with function body.
