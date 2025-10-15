@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=54 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -42,8 +42,17 @@
 [ext_resource type="Texture2D" uid="uid://cf12n5t64ccr8" path="res://assets/eventos/imagenes/jodidas/evento_5_jodido.png" id="24_4har0"]
 [ext_resource type="Texture2D" uid="uid://dni2i7ygsi5sn" path="res://assets/eventos/imagenes/evento_0.png" id="24_ngbhp"]
 [ext_resource type="Texture2D" uid="uid://dsd5roa7d0xtg" path="res://assets/eventos/imagenes/jodidas/evento_6_jodido.png" id="25_n4qu0"]
+[ext_resource type="Texture2D" uid="uid://kmqfpoemdyyf" path="res://assets/consecuencias/bien_cabeza.png" id="25_reh8g"]
 [ext_resource type="BitMap" uid="uid://srt2ip5x4cdo" path="res://assets/eventos/imagenes/mascara_evento.png" id="25_yhpmq"]
+[ext_resource type="Texture2D" uid="uid://dbyie8h3q5ynw" path="res://assets/consecuencias/bien_mano.png" id="26_4558e"]
+[ext_resource type="Texture2D" uid="uid://xkb12ratrm4c" path="res://assets/consecuencias/bien_muslo.png" id="27_1mrcw"]
+[ext_resource type="Texture2D" uid="uid://lhalx5a2qdii" path="res://assets/consecuencias/bien_pie.png" id="28_4har0"]
 [ext_resource type="Texture2D" uid="uid://x1o6bcin0tl7" path="res://assets/cuerpo_manta.png" id="28_qlrfd"]
+[ext_resource type="Texture2D" uid="uid://bn6t4jpuk8b31" path="res://assets/consecuencias/bien_torso.png" id="29_n4qu0"]
+[ext_resource type="Texture2D" uid="uid://b6borwnsddpm1" path="res://assets/consecuencias/mal_cabeza.png" id="30_thlb5"]
+[ext_resource type="Texture2D" uid="uid://u013ntwjphjq" path="res://assets/consecuencias/mal_mano.png" id="31_h0ynx"]
+[ext_resource type="Texture2D" uid="uid://bj1map28b73dk" path="res://assets/consecuencias/mal_muslo.png" id="32_y1k1x"]
+[ext_resource type="Texture2D" uid="uid://b8twesj57rfaw" path="res://assets/consecuencias/mal_pie.png" id="33_8k5xn"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -55,10 +64,12 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
 spr_herram = Array[Texture2D]([ExtResource("2_6aqbo"), ExtResource("3_ro0ie"), ExtResource("4_6aqbo"), ExtResource("5_ro0ie"), ExtResource("6_103ce")])
-feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Mano"), NodePath("Cuerpo/Feedback/Muslo"), NodePath("Cuerpo/Feedback/Pie"), NodePath("Cuerpo/Feedback/Torso")]
 spr_evento_base = Array[Texture2D]([ExtResource("8_yhpmq"), ExtResource("9_qlma2"), ExtResource("10_hfwyp"), ExtResource("11_lm11r"), ExtResource("12_ct2tn"), ExtResource("13_p5o0s")])
 spr_evento_curado = Array[Texture2D]([ExtResource("14_ww6lu"), ExtResource("15_584by"), ExtResource("16_v7uyc"), ExtResource("17_cjr1f"), ExtResource("18_nlhev"), ExtResource("19_4gycw")])
 spr_evento_jodido = Array[Texture2D]([ExtResource("20_fet82"), ExtResource("21_reh8g"), ExtResource("22_4558e"), ExtResource("23_1mrcw"), ExtResource("24_4har0"), ExtResource("25_n4qu0")])
+spr_consecuencia_curada = Array[Texture2D]([ExtResource("25_reh8g"), ExtResource("26_4558e"), ExtResource("27_1mrcw"), ExtResource("28_4har0"), ExtResource("29_n4qu0")])
+spr_consecuencia_jodida = Array[Texture2D]([ExtResource("30_thlb5"), ExtResource("31_h0ynx"), ExtResource("32_y1k1x"), ExtResource("33_8k5xn")])
+feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Mano"), NodePath("Cuerpo/Feedback/Muslo"), NodePath("Cuerpo/Feedback/Pie"), NodePath("Cuerpo/Feedback/Torso")]
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -110,27 +121,27 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Cuerpo/Consecuencias"]
+[node name="Cabeza" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect2" type="TextureRect" parent="Cuerpo/Consecuencias"]
+[node name="Torso" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect5" type="TextureRect" parent="Cuerpo/Consecuencias"]
+[node name="Mano" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect4" type="TextureRect" parent="Cuerpo/Consecuencias"]
+[node name="Muslo" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect3" type="TextureRect" parent="Cuerpo/Consecuencias"]
+[node name="Pie" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

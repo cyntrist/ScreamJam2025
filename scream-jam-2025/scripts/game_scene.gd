@@ -1,16 +1,19 @@
 extends Scene
 
 @export var spr_herram: Array[Texture2D] = [] # sprites de las distintas herramientas
-@export var feedback_nodos: Array[Control] = [] # nodos de los marcos de selección de cada parte
 #sprites de las imagenes a mostrar en base a si estan sin tocar, curadas o jodidas
 @export var spr_evento_base: Array[Texture2D] = [] # sprites de las partes investigadas sin tocar
 @export var spr_evento_curado: Array[Texture2D] = [] # sprites de las partes investigadas curadas
 @export var spr_evento_jodido: Array[Texture2D] = [] # sprites de las partes investigadas jodidas
+@export var spr_consecuencia_curada: Array[Texture2D] = [] 
+@export var spr_consecuencia_jodida: Array[Texture2D] = [] 
+@export var feedback_nodos: Array[Control] = [] # nodos de los marcos de selección de cada parte
 
 @onready var btn_selec = $Herramientas/Seleccionar # boton de seleccionar
 @onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
 @onready var nodo_evento = $Evento
 @onready var cuerpo = $Cuerpo/Base
+@onready var consecuencias = $Cuerpo/Consecuencias
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
 var cuerpo_desvelado = load("res://assets/cuerpo_single.png")
@@ -167,8 +170,10 @@ func _on_imagen_pressed() -> void:
 func _actuar() -> void: # hacer algo en la parte del cuerpo
 	if (Global.herram_equipada == Global.solucion[Global.parte_seleccionada]):
 		Global.cuerpo[Global.parte_seleccionada] = 1 
+		consecuencias.get_child(Global.parte_seleccionada).texture = spr_consecuencia_curada[Global.parte_seleccionada]
 	else:
 		Global.cuerpo[Global.parte_seleccionada] = 0
+		consecuencias.get_child(Global.parte_seleccionada).texture = spr_consecuencia_jodida[Global.parte_seleccionada]
 		Global.intentos -= 1;
 	Global.partes_actuadas += 1;
 	_actualizar_img(Global.parte_seleccionada)
@@ -192,11 +197,10 @@ func _actualizar_img(parte):
 
 # gestion
 func _acabar_o_no():
-	if (Global.partes_actuadas >= 4):
-		if (Global.intentos >= 0):
-			Global.desbloq_ultima = true;
-			_herramienta_final() #para que se actualice la herramienta
-			_desvelar_cuerpo()
+	if (Global.partes_actuadas >= 4 and Global.intentos >= 0 and !Global.desbloq_ultima):
+		Global.desbloq_ultima = true;
+		_herramienta_final() #para que se actualice la herramienta
+		_desvelar_cuerpo()
 	pass;
 		
 func _desvelar_cuerpo():
