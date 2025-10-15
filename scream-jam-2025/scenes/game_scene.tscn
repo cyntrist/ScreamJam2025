@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=55 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -47,12 +47,13 @@
 [ext_resource type="Texture2D" uid="uid://dbyie8h3q5ynw" path="res://assets/consecuencias/bien_mano.png" id="26_4558e"]
 [ext_resource type="Texture2D" uid="uid://xkb12ratrm4c" path="res://assets/consecuencias/bien_muslo.png" id="27_1mrcw"]
 [ext_resource type="Texture2D" uid="uid://lhalx5a2qdii" path="res://assets/consecuencias/bien_pie.png" id="28_4har0"]
-[ext_resource type="Texture2D" uid="uid://x1o6bcin0tl7" path="res://assets/cuerpo_manta.png" id="28_qlrfd"]
 [ext_resource type="Texture2D" uid="uid://bn6t4jpuk8b31" path="res://assets/consecuencias/bien_torso.png" id="29_n4qu0"]
 [ext_resource type="Texture2D" uid="uid://b6borwnsddpm1" path="res://assets/consecuencias/mal_cabeza.png" id="30_thlb5"]
 [ext_resource type="Texture2D" uid="uid://u013ntwjphjq" path="res://assets/consecuencias/mal_mano.png" id="31_h0ynx"]
 [ext_resource type="Texture2D" uid="uid://bj1map28b73dk" path="res://assets/consecuencias/mal_muslo.png" id="32_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://b8twesj57rfaw" path="res://assets/consecuencias/mal_pie.png" id="33_8k5xn"]
+[ext_resource type="Texture2D" uid="uid://ba81f0cn0u5iu" path="res://assets/cuerpo_single.png" id="37_4558e"]
+[ext_resource type="Texture2D" uid="uid://db78cyewvur6w" path="res://assets/manta.png" id="43_1mrcw"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -114,82 +115,49 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("28_qlrfd")
+texture = ExtResource("37_4558e")
 
 [node name="Consecuencias" type="Control" parent="Cuerpo"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Cabeza" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Torso" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Mano" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Muslo" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Pie" type="TextureRect" parent="Cuerpo/Consecuencias"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Feedback" type="Control" parent="Cuerpo"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Cabeza" type="TextureRect" parent="Cuerpo/Feedback"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("12_ttvoq")
-
-[node name="Torso" type="TextureRect" parent="Cuerpo/Feedback"]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("13_r47aq")
-
-[node name="Mano" type="TextureRect" parent="Cuerpo/Feedback"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("14_r47aq")
-
-[node name="Muslo" type="TextureRect" parent="Cuerpo/Feedback"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("15_6irsn")
-
-[node name="Pie" type="TextureRect" parent="Cuerpo/Feedback"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("16_gqftm")
+mouse_filter = 2
 
 [node name="Partes" type="Control" parent="Cuerpo"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
@@ -197,6 +165,7 @@ offset_left = 157.0
 offset_top = 627.0
 offset_right = 441.0
 offset_bottom = 885.0
+mouse_filter = 1
 
 [node name="Torso" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
@@ -204,6 +173,7 @@ offset_left = 470.0
 offset_top = 630.0
 offset_right = 961.0
 offset_bottom = 849.0
+mouse_filter = 1
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
@@ -211,6 +181,7 @@ offset_left = 815.0
 offset_top = 853.0
 offset_right = 1053.0
 offset_bottom = 1012.0
+mouse_filter = 1
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
@@ -218,6 +189,7 @@ offset_left = 997.0
 offset_top = 687.0
 offset_right = 1274.0
 offset_bottom = 914.0
+mouse_filter = 1
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Partes"]
 layout_mode = 0
@@ -225,6 +197,60 @@ offset_left = 1560.0
 offset_top = 681.0
 offset_right = 1836.0
 offset_bottom = 955.0
+mouse_filter = 1
+
+[node name="Manta" type="TextureRect" parent="Cuerpo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("43_1mrcw")
+
+[node name="Feedback" type="Control" parent="Cuerpo"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Cabeza" type="TextureRect" parent="Cuerpo/Feedback"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("12_ttvoq")
+
+[node name="Torso" type="TextureRect" parent="Cuerpo/Feedback"]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("13_r47aq")
+
+[node name="Mano" type="TextureRect" parent="Cuerpo/Feedback"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("14_r47aq")
+
+[node name="Muslo" type="TextureRect" parent="Cuerpo/Feedback"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("15_6irsn")
+
+[node name="Pie" type="TextureRect" parent="Cuerpo/Feedback"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("16_gqftm")
 
 [node name="Evento" type="Control" parent="."]
 visible = false

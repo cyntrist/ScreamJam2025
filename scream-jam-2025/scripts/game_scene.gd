@@ -13,7 +13,7 @@ extends Scene
 @onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
 @onready var nodo_evento = $Evento
 @onready var cuerpo = $Cuerpo/Base
-@onready var manta = $Cuerpo/Base
+@onready var manta = $Cuerpo/Manta
 @onready var consecuencias = $Cuerpo/Consecuencias
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
