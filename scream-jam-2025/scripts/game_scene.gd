@@ -13,6 +13,7 @@ extends Scene
 @onready var btn_deselec = $Herramientas/Deseleccionar # boton de deseleccionar
 @onready var nodo_evento = $Evento
 @onready var cuerpo = $Cuerpo/Base
+@onready var manta = $Cuerpo/Base
 @onready var consecuencias = $Cuerpo/Consecuencias
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
@@ -204,6 +205,7 @@ func _acabar_o_no():
 	pass;
 		
 func _desvelar_cuerpo():
-	cuerpo.texture = cuerpo_desvelado;
+	#cuerpo.texture = cuerpo_desvelado;
+	manta.visible = false;
 	_deseleccionar(Global.parte_seleccionada)
 	
