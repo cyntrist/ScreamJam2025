@@ -22,6 +22,8 @@ extends Scene
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
+var es_hora_de_acabar = false;
+var final_bueno = false;
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 
 func on_enable():
@@ -42,7 +44,8 @@ func on_enable():
 	nodo_evento.visible = false;
 	for child in consecuencias.get_children():
 		child.texture = null
-		
+	es_hora_de_acabar = false;
+	final_bueno = false;
 		
 	# dialogos?
 	Global.input_enabled = false;
@@ -205,6 +208,8 @@ func _actuar() -> void: # hacer algo en la parte del cuerpo
 	Global.partes_actuadas += 1;
 	_actualizar_img(Global.parte_seleccionada)
 	_acabar_o_no(); 
+	if (Global.herram_equipada == 4):
+		es_hora_de_acabar = true
 
 
 func _actualizar_img(parte):
@@ -227,17 +232,20 @@ func _acabar_o_no():
 	if (Global.partes_actuadas >= 4):
 		if (Global.intentos > 0):
 			if (!Global.desbloq_ultima):
+				final_bueno = true
 				Global.desbloq_ultima = true;
 				_herramienta_final() #para que se actualice la herramienta
 				_desvelar_cuerpo()
 		else: # TODO: conversación game over
-			Global.change_scene(Global.Scenes.GAME_OVER)
+			es_hora_de_acabar = true
+			#Global.change_scene(Global.Scenes.GAME_OVER)
 	pass;
 
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
 	manta.visible = false;
 	_deseleccionar(Global.parte_seleccionada)
+	#_mostrar_persona()
 
 func _on_feedback_pressed() -> void:
 	if !Global.input_enabled: return
@@ -250,7 +258,8 @@ func _on_feedback_pressed() -> void:
 func _mostrar_dialogo():
 	dialogo.visible = true
 	burbuja.visible = true
-	texto.text = tr("NULL")
+	var ind = 1;
+	texto.text = tr(str(ind))
 	pass
 
 func _mostrar_persona():
@@ -263,8 +272,14 @@ func _esconder_dialogo():
 	dialogo.visible = false
 
 func _on_burbuja_pressed() -> void:
-	Global.input_enabled = true
-	Global.habilitar_input.emit()
+	if (es_hora_de_acabar):
+		var state = Global.Scenes.GAME_OVER
+		if (final_bueno):
+			state = Global.Scenes.CREDITS
+		Global.change_scene(state)
+	else:
+		Global.input_enabled = true
+		Global.habilitar_input.emit()
 	burbuja.visible = false
 	pass # Replace with function body.
 

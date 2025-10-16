@@ -22,5 +22,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		if (Global.current_scene == Global.Scenes.GAME):
 			Global.mostrar_dialogo.emit()
 			pass
-		#Global.input_enabled = true;
+		else:
+			Global.input_enabled = true;
 		pass # no pasa nada

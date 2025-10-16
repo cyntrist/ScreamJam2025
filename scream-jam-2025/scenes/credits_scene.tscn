@@ -10,3 +10,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ma2dp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 489.0
+offset_right = 1042.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 196
+text = ":^3"
