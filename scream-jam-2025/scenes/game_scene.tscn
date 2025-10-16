@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=64 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -62,9 +62,7 @@
 [ext_resource type="BitMap" uid="uid://bcd3y3pxepogu" path="res://assets/feedback/mascaras/investigar_antebrazo.png" id="44_8k5xn"]
 [ext_resource type="BitMap" uid="uid://cc2jpjh4kwgwy" path="res://assets/feedback/mascaras/investigar_muslo.png" id="46_nqvol"]
 [ext_resource type="BitMap" uid="uid://bh3ah8uc610ae" path="res://assets/feedback/mascaras/investigar_pierna.png" id="48_hn37p"]
-[ext_resource type="FontFile" uid="uid://cocwlttqvkcxw" path="res://fonts/almendra/Almendra-Regular.ttf" id="52_rsf47"]
-[ext_resource type="FontFile" uid="uid://datkg37av0062" path="res://fonts/almendra/Almendra-BoldItalic.ttf" id="54_740e7"]
-[ext_resource type="FontFile" uid="uid://fo6cd8s00mu2" path="res://fonts/almendra/Almendra-Italic.ttf" id="55_5m135"]
+[ext_resource type="Script" uid="uid://cwvvl4quofakj" path="res://scripts/typewriter.gd" id="56_740e7"]
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -90,7 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.60933006, 0.6093301, 0.60933006, 1)
+color = Color(0.3254902, 0.4117647, 0.40784314, 1)
 
 [node name="Interfaz" type="TextureRect" parent="Fondo"]
 layout_mode = 0
@@ -279,22 +277,20 @@ texture_click_mask = ExtResource("38_hn37p")
 
 [node name="Texto" type="RichTextLabel" parent="Diálogo/Burbuja"]
 layout_mode = 0
-offset_left = 444.0
-offset_top = 262.0
-offset_right = 974.0
-offset_bottom = 412.0
+offset_left = 260.0
+offset_top = 364.0
+offset_right = 790.0
+offset_bottom = 514.0
 mouse_filter = 1
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("52_rsf47")
 theme_override_fonts/bold_font = ExtResource("37_y1k1x")
-theme_override_fonts/bold_italics_font = ExtResource("54_740e7")
-theme_override_fonts/italics_font = ExtResource("55_5m135")
 theme_override_font_sizes/normal_font_size = 52
 theme_override_font_sizes/bold_font_size = 52
 theme_override_font_sizes/bold_italics_font_size = 52
 theme_override_font_sizes/italics_font_size = 52
+bbcode_enabled = true
 text = "yepaaa"
 vertical_alignment = 1
+script = ExtResource("56_740e7")
 
 [node name="Evento" type="Control" parent="."]
 visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xy3xa46sijbn"
-path="res://.godot/imported/persona_a.png-dfa2fe81c742fb31e3a5fe5337e82060.ctex"
+uid="uid://pk83bcs7mqnn"
+path="res://.godot/imported/persona.png-367ca4248e4182237f1d1b17efded02b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eventos/persona_a.png"
-dest_files=["res://.godot/imported/persona_a.png-dfa2fe81c742fb31e3a5fe5337e82060.ctex"]
+source_file="res://assets/eventos/ph/persona.png"
+dest_files=["res://.godot/imported/persona.png-367ca4248e4182237f1d1b17efded02b.ctex"]
 
 [params]
 
