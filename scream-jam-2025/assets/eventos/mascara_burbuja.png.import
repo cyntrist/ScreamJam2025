@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://xum3c5nure2w"
+path="res://.godot/imported/mascara_burbuja.png-666facef519466f9a95b2c486f2ed565.res"
+
+[deps]
+
+source_file="res://assets/eventos/mascara_burbuja.png"
+dest_files=["res://.godot/imported/mascara_burbuja.png-666facef519466f9a95b2c486f2ed565.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

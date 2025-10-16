@@ -17,6 +17,7 @@ extends Scene
 @onready var consecuencias = $Cuerpo/Consecuencias
 @onready var dialogo = $"Diálogo"
 @onready var persona = $"Diálogo/Persona"
+@onready var burbuja = $"Diálogo/Burbuja"
 @onready var texto = $"Diálogo/Burbuja/Texto"
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
@@ -172,8 +173,8 @@ func _feedback(parte):
 	
 func _mostrar_imagen(parte):
 	nodo_evento.visible = true;
-	#nodo_evento.get_child(0).texture = spr_evento_base[parte];
 	_actualizar_img(parte)
+	_esconder_dialogo()
 	pass
 	
 func _deseleccionar(parte):
@@ -242,11 +243,32 @@ func _desvelar_cuerpo():
 func _on_feedback_pressed() -> void:
 	if !Global.input_enabled: return
 	_deseleccionar(Global.parte_seleccionada)
+	_mostrar_persona()
 	pass # Replace with function body.
 
 
 # DIALOGOS
 func _mostrar_dialogo():
 	dialogo.visible = true
-	
+	burbuja.visible = true
+	texto.text = "probando probando"
 	pass
+
+func _mostrar_persona():
+	dialogo.visible = true
+	burbuja.visible = false
+	persona.visible = true
+	pass
+
+func _esconder_dialogo():
+	dialogo.visible = false
+
+func _on_burbuja_pressed() -> void:
+	Global.input_enabled = true
+	burbuja.visible = false
+	pass # Replace with function body.
+
+
+func _on_persona_pressed() -> void:
+	_mostrar_dialogo()
+	pass # Replace with function body.

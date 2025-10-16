@@ -13,6 +13,7 @@ signal equipar_herramienta(index) #que herramienta
 signal desequipar()
 # dialogo
 signal mostrar_dialogo()
+signal habilitar_input()
 
 
 ## lógica del juego

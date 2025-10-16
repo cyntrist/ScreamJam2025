@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=63 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -52,8 +52,10 @@
 [ext_resource type="Texture2D" uid="uid://u013ntwjphjq" path="res://assets/consecuencias/mal_mano.png" id="31_h0ynx"]
 [ext_resource type="Texture2D" uid="uid://bj1map28b73dk" path="res://assets/consecuencias/mal_muslo.png" id="32_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://b8twesj57rfaw" path="res://assets/consecuencias/mal_pie.png" id="33_8k5xn"]
+[ext_resource type="BitMap" uid="uid://kxmggll8n017" path="res://assets/eventos/mascara_persona.png" id="36_nqvol"]
 [ext_resource type="Texture2D" uid="uid://ba81f0cn0u5iu" path="res://assets/cuerpo_single.png" id="37_4558e"]
 [ext_resource type="FontFile" uid="uid://bth0pjgabvrfy" path="res://fonts/almendra/Almendra-Bold.ttf" id="37_y1k1x"]
+[ext_resource type="BitMap" uid="uid://xum3c5nure2w" path="res://assets/eventos/mascara_burbuja.png" id="38_hn37p"]
 [ext_resource type="BitMap" uid="uid://bsovv55munh6p" path="res://assets/feedback/mascaras/investigar_cabeza.png" id="40_h0ynx"]
 [ext_resource type="BitMap" uid="uid://c08cj76srof02" path="res://assets/feedback/mascaras/investigar_torso.png" id="42_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://db78cyewvur6w" path="res://assets/manta.png" id="43_1mrcw"]
@@ -93,35 +95,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("2_onqr8")
-
-[node name="Diálogo" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Persona" type="TextureButton" parent="Diálogo"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("8_ro0ie")
-
-[node name="Burbuja" type="TextureButton" parent="Diálogo"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("9_103ce")
-
-[node name="Texto" type="Label" parent="Diálogo/Burbuja"]
-layout_mode = 0
-offset_left = 476.0
-offset_top = 298.0
-offset_right = 644.0
-offset_bottom = 366.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("37_y1k1x")
-theme_override_font_sizes/font_size = 52
-text = "yepaaa"
-vertical_alignment = 1
 
 [node name="Cuerpo" type="Control" parent="."]
 anchors_preset = 0
@@ -279,6 +252,40 @@ texture_normal = ExtResource("16_gqftm")
 texture_click_mask = ExtResource("48_hn37p")
 script = ExtResource("16_6aqbo")
 
+[node name="Diálogo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Persona" type="TextureButton" parent="Diálogo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+texture_normal = ExtResource("8_ro0ie")
+texture_click_mask = ExtResource("36_nqvol")
+
+[node name="Burbuja" type="TextureButton" parent="Diálogo"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+texture_normal = ExtResource("9_103ce")
+texture_click_mask = ExtResource("38_hn37p")
+
+[node name="Texto" type="Label" parent="Diálogo/Burbuja"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 298.0
+offset_right = 644.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("37_y1k1x")
+theme_override_font_sizes/font_size = 52
+text = "yepaaa"
+vertical_alignment = 1
+
 [node name="Evento" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -356,6 +363,8 @@ script = ExtResource("16_6aqbo")
 [connection signal="pressed" from="Cuerpo/Feedback/Mano" to="." method="_on_feedback_pressed"]
 [connection signal="pressed" from="Cuerpo/Feedback/Muslo" to="." method="_on_feedback_pressed"]
 [connection signal="pressed" from="Cuerpo/Feedback/Pie" to="." method="_on_feedback_pressed"]
+[connection signal="pressed" from="Diálogo/Persona" to="." method="_on_persona_pressed"]
+[connection signal="pressed" from="Diálogo/Burbuja" to="." method="_on_burbuja_pressed"]
 [connection signal="pressed" from="Evento/Imagen" to="." method="_on_imagen_pressed"]
 [connection signal="pressed" from="Herramientas/Arriba" to="." method="_on_arriba_pressed"]
 [connection signal="pressed" from="Herramientas/Abajo" to="." method="_on_abajo_pressed"]

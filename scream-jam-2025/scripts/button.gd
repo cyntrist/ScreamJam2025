@@ -12,7 +12,13 @@ func _ready() -> void:
 	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	self.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	self.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	Global.habilitar_input.connect(_habilitar)
 	pass
+	
+func _habilitar():
+	dentro = false
+	enabled = true	
+	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	
 
 func _on_mouse_entered() -> void:
