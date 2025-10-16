@@ -53,6 +53,10 @@ Click={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/guion.es.translation", "res://localization/guion.en.translation")
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.09411765, 0.09411765, 0.09019608, 1)

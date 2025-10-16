@@ -21,7 +21,6 @@ extends Scene
 @onready var texto = $"Diálogo/Burbuja/Texto"
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
-var cuerpo_desvelado = load("res://assets/cuerpo_single.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 
@@ -251,7 +250,7 @@ func _on_feedback_pressed() -> void:
 func _mostrar_dialogo():
 	dialogo.visible = true
 	burbuja.visible = true
-	texto.text = "probando probando"
+	texto.text = tr("NULL")
 	pass
 
 func _mostrar_persona():
