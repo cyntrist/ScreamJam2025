@@ -46,7 +46,7 @@ var bgm
 
 ## input
 var cm # cursor manager
-
+#await get_tree().create_timer(time_in_seconds).timeout
 
 func _ready() -> void:
 	pass
