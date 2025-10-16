@@ -19,5 +19,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.on_transition_end.emit() # señal 
 		player.play("fade_out") # se inicia el fade out
 	elif anim_name == "fade_out": # la pantalla acaba de volver a mostrarse
-		Global.input_enabled = true;
+		if (Global.current_scene == Global.Scenes.GAME):
+			Global.mostrar_dialogo.emit()
+			pass
+		#Global.input_enabled = true;
 		pass # no pasa nada

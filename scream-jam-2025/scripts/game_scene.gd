@@ -15,6 +15,9 @@ extends Scene
 @onready var cuerpo = $Cuerpo/Base
 @onready var manta = $Cuerpo/Manta
 @onready var consecuencias = $Cuerpo/Consecuencias
+@onready var dialogo = $"Diálogo"
+@onready var persona = $"Diálogo/Persona"
+@onready var texto = $"Diálogo/Burbuja/Texto"
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
 var cuerpo_desvelado = load("res://assets/cuerpo_single.png")
@@ -39,6 +42,11 @@ func on_enable():
 	nodo_evento.visible = false;
 	for child in consecuencias.get_children():
 		child.texture = null
+		
+		
+	# dialogos?
+	Global.input_enabled = false;
+	Global.mostrar_dialogo.connect(_mostrar_dialogo)
 	pass
 
 func on_disable():
@@ -56,6 +64,7 @@ func _process(_delta: float) -> void:
 
 ### HERRAMIENTAS!!!!!!!!!!!!!!!!
 func _on_abajo_pressed() -> void:
+	if !Global.input_enabled: return
 	ind_selec -= 1
 	var maxI = spr_herram.size() - 1
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
@@ -71,6 +80,7 @@ func _on_abajo_pressed() -> void:
 
 
 func _on_arriba_pressed() -> void:
+	if !Global.input_enabled: return
 	ind_selec += 1
 	var maxI = spr_herram.size()
 	if (!Global.desbloq_ultima): # si no esta la ultima herramienta desbloqueada
@@ -85,12 +95,16 @@ func _on_arriba_pressed() -> void:
 
 
 func _on_seleccionar_pressed() -> void:
+	if !Global.input_enabled: 
+		return
 	Global.equipar_herramienta.emit(ind_selec);
 	btn_deselec.texture_normal = spr_herram[ind_selec]
 	pass # Replace with function body.
 
 
 func _on_equipada_pressed() -> void:
+	if !Global.input_enabled: 
+		return
 	Global.desequipar.emit();
 	btn_deselec.texture_normal = mano
 	pass # Replace with function body.
@@ -109,23 +123,28 @@ func _herramienta_final():
 
 ### BOTONES!!!!!!!!!!!!!!!!
 func _on_cabeza_pressed() -> void:
+	if !Global.input_enabled: return
 	_investigar(Global.Partes.CABEZA)
 	pass # Replace with function body.
 	
 func _on_torso_pressed() -> void:
+	if !Global.input_enabled: return
 	if (!Global.desbloq_ultima): return
 	_investigar(Global.Partes.TORSO)
 	pass # Replace with function body.
 	
 func _on_brazo_2_pressed() -> void:
+	if !Global.input_enabled: return
 	_investigar(Global.Partes.MANO)
 	pass # Replace with function body.
 
 
 func _on_pierna_1_pressed() -> void:
+	if !Global.input_enabled: return
 	_investigar(Global.Partes.MUSLO)
 	pass # Replace with function body.
 func _on_pierna_2_pressed() -> void:
+	if !Global.input_enabled: return
 	_investigar(Global.Partes.PIE)
 	pass # Replace with function body.
 
@@ -166,6 +185,7 @@ func _deseleccionar(parte):
 
 ### PRESIONADO EVENTO!!!!!!! 
 func _on_imagen_pressed() -> void:
+	if !Global.input_enabled: return
 	if (Global.cuerpo[Global.parte_seleccionada] == -1): # si no hay nada seleccionado no hay nada que hacer
 		if (Global.herram_equipada != -1): # si estas intentando hacer algo
 			_actuar();
@@ -213,14 +233,20 @@ func _acabar_o_no():
 		else: # TODO: conversación game over
 			Global.change_scene(Global.Scenes.GAME_OVER)
 	pass;
-		
+
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
 	manta.visible = false;
 	_deseleccionar(Global.parte_seleccionada)
-	
-
 
 func _on_feedback_pressed() -> void:
+	if !Global.input_enabled: return
 	_deseleccionar(Global.parte_seleccionada)
 	pass # Replace with function body.
+
+
+# DIALOGOS
+func _mostrar_dialogo():
+	dialogo.visible = true
+	
+	pass

@@ -16,20 +16,21 @@ func _ready() -> void:
 	
 
 func _on_mouse_entered() -> void:
-	if !enabled or !Global.input_enabled: return
+	if !enabled or !Global.input_enabled: 
+		return
 	self.modulate = hover_color
 	dentro = true;
 	pass # Replace with function body.
 
 func _on_mouse_exited() -> void:
-	if !enabled or !Global.input_enabled: return
+	if !enabled or !Global.input_enabled: 
+		return
 	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	dentro = false;
 	pass # Replace with function body.
 
 func _input(_event):
-	# TODO: QUE CUANDO ESTA GLOBAL INPUT A FALSE SE VEAN DESACTIVADES!!!!
-	if !enabled: 
+	if !enabled or !Global.input_enabled: 
 		self.modulate = off_color
 		return
 	if dentro:

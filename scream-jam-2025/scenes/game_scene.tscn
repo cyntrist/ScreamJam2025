@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=61 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1map28b73dk" path="res://assets/consecuencias/mal_muslo.png" id="32_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://b8twesj57rfaw" path="res://assets/consecuencias/mal_pie.png" id="33_8k5xn"]
 [ext_resource type="Texture2D" uid="uid://ba81f0cn0u5iu" path="res://assets/cuerpo_single.png" id="37_4558e"]
+[ext_resource type="FontFile" uid="uid://bth0pjgabvrfy" path="res://fonts/almendra/Almendra-Bold.ttf" id="37_y1k1x"]
 [ext_resource type="BitMap" uid="uid://bsovv55munh6p" path="res://assets/feedback/mascaras/investigar_cabeza.png" id="40_h0ynx"]
 [ext_resource type="BitMap" uid="uid://c08cj76srof02" path="res://assets/feedback/mascaras/investigar_torso.png" id="42_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://db78cyewvur6w" path="res://assets/manta.png" id="43_1mrcw"]
@@ -94,7 +95,6 @@ mouse_filter = 2
 texture = ExtResource("2_onqr8")
 
 [node name="Diálogo" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -110,6 +110,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("9_103ce")
+
+[node name="Texto" type="Label" parent="Diálogo/Burbuja"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 298.0
+offset_right = 644.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("37_y1k1x")
+theme_override_font_sizes/font_size = 52
+text = "yepaaa"
+vertical_alignment = 1
 
 [node name="Cuerpo" type="Control" parent="."]
 anchors_preset = 0

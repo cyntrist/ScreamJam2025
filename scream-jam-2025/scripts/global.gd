@@ -11,6 +11,8 @@ signal on_game_end()
 # herramientas
 signal equipar_herramienta(index) #que herramienta 
 signal desequipar()
+# dialogo
+signal mostrar_dialogo()
 
 
 ## lógica del juego

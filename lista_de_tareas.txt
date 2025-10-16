@@ -8,7 +8,6 @@ prioridades:
     > sonido
     > reemplazar y reencajar arte
     > respiración?
-    > pulir todo lo pulible
 
 
 
