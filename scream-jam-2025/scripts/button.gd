@@ -5,21 +5,26 @@ class_name Boton
 @export var hover_color : Color = Color(0.623, 0.136, 0.14, 1.0)
 @export var clicked_color : Color = Color(0.247, 0.247, 0.247, 1.0)
 @export var off_color : Color = Color(0.247, 0.247, 0.247, 1.0)
+@export var on_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 var dentro = false;
 var enabled = true;
 
 func _ready() -> void:
-	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	self.modulate = on_color
 	self.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	self.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 	Global.habilitar_input.connect(_habilitar)
+	Global.deshabilitar_input.connect(_deshabilitar)
 	pass
 	
 func _habilitar():
-	dentro = false
+	#dentro = false
 	enabled = true	
-	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	
+	self.modulate = on_color
+
+func _deshabilitar():
+	enabled = false
+	self.modulate = off_color
 
 func _on_mouse_entered() -> void:
 	if !enabled or !Global.input_enabled: 
@@ -31,7 +36,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	if !enabled or !Global.input_enabled: 
 		return
-	self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	self.modulate = on_color
 	dentro = false;
 	pass # Replace with function body.
 
@@ -46,4 +51,4 @@ func _input(_event):
 			#if dentro:
 					#self.modulate = hover_color;
 			#else:
-			self.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			self.modulate = on_color

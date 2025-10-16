@@ -36,7 +36,7 @@ func on_enable():
 	Global.partes_actuadas = 0;
 	Global.parte_seleccionada = -1 # parte que se está investigando ahora mismo, de 0 a 5 y si es -1 no es ninguna
 	Global.desbloq_ultima = false # ultima herramienta desbloqueada
-	Global.input_enabled = true
+	#Global.input_enabled = true
 	Global.cuerpo = [ -1, -1, -1, -1, -1, -1 ] # -1 si está sin tocar, 0 si has fallado y 1 si lo has curado
 	for nodo in feedback_nodos:
 		nodo.visible = false;
@@ -265,10 +265,13 @@ func _esconder_dialogo():
 
 func _on_burbuja_pressed() -> void:
 	Global.input_enabled = true
+	Global.habilitar_input.emit()
 	burbuja.visible = false
 	pass # Replace with function body.
 
 
 func _on_persona_pressed() -> void:
+	Global.input_enabled = false
+	Global.deshabilitar_input.emit()
 	_mostrar_dialogo()
 	pass # Replace with function body.

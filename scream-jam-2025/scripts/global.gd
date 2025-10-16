@@ -14,6 +14,7 @@ signal desequipar()
 # dialogo
 signal mostrar_dialogo()
 signal habilitar_input()
+signal deshabilitar_input()
 
 
 ## lógica del juego
