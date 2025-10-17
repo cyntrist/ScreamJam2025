@@ -161,7 +161,6 @@ func _investigar(parte):
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
 	else: # si ya esta seleccionada se deselecciona
-		print_debug("holaa")
 		_deseleccionar(parte)
 	pass # Replace with function body.
 
