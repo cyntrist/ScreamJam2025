@@ -161,7 +161,6 @@ func _investigar(parte):
 	#for nodo in feedback_nodos:
 		#print_debug(nodo.visible)
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
-		Global.parte_seleccionada = parte;
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
 	else: # si ya esta seleccionada se deselecciona
@@ -173,17 +172,17 @@ func _feedback(parte):
 	#for nodo in feedback_nodos:
 		#nodo.visible = false;
 		
-	for nodo in feedback_nodos:
-		Global.make_visible(nodo, 0.0)
+	Global.hide(feedback_nodos[Global.parte_seleccionada])
+	Global.parte_seleccionada = parte;
 	#mostrar la nuestra
 	#feedback_nodos[parte].visible = true;
-	Global.make_visible(feedback_nodos[parte], 1.0)
+	Global.show(feedback_nodos[parte], 1.0)
 	pass
 	
 func _mostrar_imagen(parte):
 	#nodo_evento.visible = true;
 	_actualizar_img(parte)
-	Global.make_visible(nodo_evento, 1.0)
+	Global.show(nodo_evento, 1.0)
 	_esconder_dialogo()
 	persona.disabled = true;
 	pass
@@ -193,10 +192,10 @@ func _deseleccionar(parte):
 	#feedback_nodos[parte].visible = false;
 	#feedback_nodos[parte].disabled = true;
 	#nodo_evento.visible = false;
-	Global.make_visible(feedback_nodos[parte], 0.0)
-	Global.make_visible(nodo_evento, 0.0)
+	Global.hide(feedback_nodos[parte])
+	Global.hide(nodo_evento)
 	persona.disabled = false
-	Global.make_visible(dialogo, 1.0)
+	Global.show(dialogo, 1.0)
 
 
 
@@ -257,7 +256,7 @@ func _acabar_o_no():
 
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
-	Global.make_visible(manta, 0.0, 3.0)
+	Global.hide(manta, 3.0)
 	await Global.timer(3.0)
 	_deseleccionar(Global.parte_seleccionada)
 	#_mostrar_persona()
@@ -274,8 +273,8 @@ func _on_feedback_pressed() -> void:
 
 # DIALOGOS
 func _mostrar_dialogo():
-	Global.make_visible(dialogo, 1., 0.1)
-	Global.make_visible(burbuja, 1., 0.1)
+	Global.show(dialogo, 1., 0.1)
+	Global.show(burbuja, 1., 0.1)
 	dialogo.visible = true
 	burbuja.visible = true
 	#texto.text = tr(str(ind))
@@ -286,13 +285,13 @@ func _mostrar_dialogo():
 
 func _mostrar_persona():
 	var delay = 0.1;
-	Global.make_visible(dialogo, 1., 0.25, delay)
-	Global.make_visible(burbuja, 0., 0.25, delay)
-	Global.make_visible(persona, 1., 0.25, delay)
+	Global.show(dialogo, 1., 0.25, delay)
+	Global.show(persona, 1., 0.25, delay)
+	Global.hide(burbuja, 0.25, delay)
 	pass
 
 func _esconder_dialogo():
-	Global.make_visible(dialogo, 0.5, 0.25)
+	Global.show(dialogo, 0.5, 0.25)
 
 func _on_burbuja_pressed() -> void:
 	if (es_hora_de_acabar):
@@ -304,7 +303,7 @@ func _on_burbuja_pressed() -> void:
 		Global.input_enabled = true
 		Global.habilitar_input.emit()
 	#burbuja.visible = false
-	Global.make_visible(burbuja, 0., 0.25)
+	Global.hide(burbuja, 0.25)
 	persona.texture_normal = medico_mano_baja
 	pass # Replace with function body.
 
