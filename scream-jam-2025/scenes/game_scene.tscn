@@ -247,54 +247,49 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 texture_normal = ExtResource("12_ttvoq")
 texture_click_mask = ExtResource("40_h0ynx")
-script = ExtResource("16_6aqbo")
 
 [node name="Torso" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 texture_normal = ExtResource("13_r47aq")
 texture_click_mask = ExtResource("42_y1k1x")
-script = ExtResource("16_6aqbo")
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 texture_normal = ExtResource("14_r47aq")
 texture_click_mask = ExtResource("44_8k5xn")
-script = ExtResource("16_6aqbo")
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 texture_normal = ExtResource("15_6irsn")
 texture_click_mask = ExtResource("46_nqvol")
-script = ExtResource("16_6aqbo")
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 texture_normal = ExtResource("16_gqftm")
 texture_click_mask = ExtResource("48_hn37p")
-script = ExtResource("16_6aqbo")
 
 [node name="Diálogo" type="Control" parent="."]
 anchors_preset = 0

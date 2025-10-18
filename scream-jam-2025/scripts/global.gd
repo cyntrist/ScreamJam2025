@@ -78,11 +78,10 @@ func make_visible(obj, alpha = 1., speed = 0.25, delay = 0):
 		#print_debug("deberia verse")
 		obj.visible = true;
 	tween.tween_property(obj, "modulate", color, speed).set_delay(delay)
-	#tween.tween_callback(_visibility.bind(obj, alpha)).set_delay(speed + delay)
+	#if (alpha == 0.0):
+		#tween.tween_callback(_hide.bind(obj)).set_delay(speed + delay)
 	pass
 
-func _visibility(obj, alpha):
-	if (alpha == 0.0): 
-		print_debug("deberia esconderse")
-		obj.visible = false
+func _hide(obj):
+	obj.visible = false
 	pass

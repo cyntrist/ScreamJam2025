@@ -170,10 +170,14 @@ func _investigar(parte):
 
 func _feedback(parte):
 	#esconder el resto de partes
+	#for nodo in feedback_nodos:
+		#nodo.visible = false;
+		
 	for nodo in feedback_nodos:
-		nodo.visible = false;
+		Global.make_visible(nodo, 0.0)
 	#mostrar la nuestra
-	feedback_nodos[parte].visible = true;
+	#feedback_nodos[parte].visible = true;
+	Global.make_visible(feedback_nodos[parte], 1.0)
 	pass
 	
 func _mostrar_imagen(parte):
@@ -186,8 +190,10 @@ func _mostrar_imagen(parte):
 	
 func _deseleccionar(parte):
 	Global.parte_seleccionada = -1;
-	feedback_nodos[parte].visible = false;
+	#feedback_nodos[parte].visible = false;
+	#feedback_nodos[parte].disabled = true;
 	#nodo_evento.visible = false;
+	Global.make_visible(feedback_nodos[parte], 0.0)
 	Global.make_visible(nodo_evento, 0.0)
 	persona.disabled = false
 	Global.make_visible(dialogo, 1.0)
