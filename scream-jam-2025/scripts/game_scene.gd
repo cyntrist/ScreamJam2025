@@ -172,11 +172,11 @@ func _feedback(parte):
 	#for nodo in feedback_nodos:
 		#nodo.visible = false;
 		
-	Global.hide(feedback_nodos[Global.parte_seleccionada])
+	Global.hide(feedback_nodos[Global.parte_seleccionada], 0.1)
 	Global.parte_seleccionada = parte;
 	#mostrar la nuestra
 	#feedback_nodos[parte].visible = true;
-	Global.show(feedback_nodos[parte], 1.0)
+	Global.show(feedback_nodos[parte], 1.0, 0.1)
 	pass
 	
 func _mostrar_imagen(parte):
@@ -192,7 +192,7 @@ func _deseleccionar(parte):
 	#feedback_nodos[parte].visible = false;
 	#feedback_nodos[parte].disabled = true;
 	#nodo_evento.visible = false;
-	Global.hide(feedback_nodos[parte])
+	Global.hide(feedback_nodos[parte], 0.1)
 	Global.hide(nodo_evento)
 	persona.disabled = false
 	Global.show(dialogo, 1.0)

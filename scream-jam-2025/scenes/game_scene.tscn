@@ -317,11 +317,12 @@ texture_click_mask = ExtResource("38_hn37p")
 
 [node name="Texto" type="RichTextLabel" parent="Diálogo/Burbuja"]
 layout_mode = 0
-offset_left = 278.0
-offset_top = 364.0
+offset_left = 247.0
+offset_top = 255.0
 offset_right = 808.0
-offset_bottom = 514.0
+offset_bottom = 530.0
 mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/bold_font = ExtResource("37_y1k1x")
 theme_override_font_sizes/normal_font_size = 52
 theme_override_font_sizes/bold_font_size = 52
@@ -411,6 +412,8 @@ script = ExtResource("16_6aqbo")
 [connection signal="pressed" from="Cuerpo/Feedback/Pie" to="." method="_on_feedback_pressed"]
 [connection signal="pressed" from="Diálogo/Persona" to="." method="_on_persona_pressed"]
 [connection signal="pressed" from="Diálogo/Burbuja" to="." method="_on_burbuja_pressed"]
+[connection signal="mouse_entered" from="Diálogo/Burbuja/Texto" to="Diálogo/Burbuja/Texto" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Diálogo/Burbuja/Texto" to="Diálogo/Burbuja/Texto" method="_on_mouse_exited"]
 [connection signal="pressed" from="Evento/Imagen" to="." method="_on_imagen_pressed"]
 [connection signal="pressed" from="Herramientas/Arriba" to="." method="_on_arriba_pressed"]
 [connection signal="pressed" from="Herramientas/Abajo" to="." method="_on_abajo_pressed"]

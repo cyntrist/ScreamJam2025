@@ -27,3 +27,13 @@ func iniciar_dialogo(ind):
 	text_length = self.text.length();
 	text_displayed = 0;
 	self.visible_ratio = 0;
+
+
+func _on_mouse_entered() -> void:
+	self.add_theme_color_override("default_color", Color(0.0, 0.173, 0.737, 1.0)) 
+	pass # Replace with function body.
+
+
+func _on_mouse_exited() -> void:
+	self.add_theme_color_override("default_color", Color(1.0, 1.0, 1.0, 1.0)) 
+	pass # Replace with function body.
