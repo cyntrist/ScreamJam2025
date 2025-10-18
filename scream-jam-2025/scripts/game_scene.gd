@@ -176,8 +176,9 @@ func _feedback(parte):
 	pass
 	
 func _mostrar_imagen(parte):
-	nodo_evento.visible = true;
+	#nodo_evento.visible = true;
 	_actualizar_img(parte)
+	Global.make_visible(nodo_evento, 1.0)
 	_esconder_dialogo()
 	persona.disabled = true;
 	pass
@@ -272,12 +273,14 @@ func _mostrar_dialogo():
 	#texto.text = tr(str(ind))
 	texto.iniciar_dialogo(1)
 	persona.texture_normal = medico_mano_alta
+	animator.play("medico_tween", -1, 1.0);
 	pass
 
 func _mostrar_persona():
-	Global.make_visible(dialogo, 1., 0.25)
-	Global.make_visible(burbuja, 0., 0.25)
-	Global.make_visible(persona, 1., 0.25)
+	var delay = 0.1;
+	Global.make_visible(dialogo, 1., 0.25, delay)
+	Global.make_visible(burbuja, 0., 0.25, delay)
+	Global.make_visible(persona, 1., 0.25, delay)
 	pass
 
 func _esconder_dialogo():
@@ -300,8 +303,7 @@ func _on_burbuja_pressed() -> void:
 
 func _on_persona_pressed() -> void:
 	if (Global.input_enabled):
-		animator.play("medico_tween", -1, 1.0);
-		await Global.timer(0.25)
+		#await Global.timer(0.25)
 		_mostrar_dialogo()
 	Global.input_enabled = false
 	Global.deshabilitar_input.emit()
