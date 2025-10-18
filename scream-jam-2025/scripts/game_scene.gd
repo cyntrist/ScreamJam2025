@@ -264,7 +264,8 @@ func _mostrar_dialogo():
 	dialogo.visible = true
 	burbuja.visible = true
 	var ind = 1; #TODO
-	texto.text = tr(str(ind))
+	#texto.text = tr(str(ind))
+	texto.iniciar_dialogo(1)
 	persona.texture_normal = medico_mano_alta
 	pass
 
@@ -294,9 +295,9 @@ func _on_burbuja_pressed() -> void:
 func _on_persona_pressed() -> void:
 	if (Global.input_enabled):
 		animator.play("medico_tween", -1, 1.0);
+		_mostrar_dialogo()
 	Global.input_enabled = false
 	Global.deshabilitar_input.emit()
-	_mostrar_dialogo()
 	persona.texture_normal = medico_mano_alta
 	
 	pass # Replace with function body.

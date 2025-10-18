@@ -65,21 +65,6 @@
 [ext_resource type="Texture2D" uid="uid://cl1iluhco5quj" path="res://assets/eventos/persona1.png" id="49_v0850"]
 [ext_resource type="Script" uid="uid://cwvvl4quofakj" path="res://scripts/typewriter.gd" id="56_740e7"]
 
-[sub_resource type="Animation" id="Animation_v0850"]
-resource_name = "medico_tween"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Diálogo/Persona:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.5),
-"transitions": PackedFloat32Array(0.5, 0.5, 2.7320802),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_rsf47"]
 length = 0.001
 tracks/0/type = "value"
@@ -93,6 +78,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v0850"]
+resource_name = "medico_tween"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Diálogo/Persona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 2.7320802),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_740e7"]

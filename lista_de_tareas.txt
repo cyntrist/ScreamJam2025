@@ -4,12 +4,12 @@ hola cynthia yo a ti también
 
 prioridades:
     > typewriter
-    > hover feedback
-	> TWEENS!!!
+    > TWEENS!!!
     > ajustar cursor
     > flujo de dialogo
     > escribir guion
     > escribir traducción 
     > implementar sonido
     > reemplazar y reencajar arte
+    > hover feedback
     > respiración?
