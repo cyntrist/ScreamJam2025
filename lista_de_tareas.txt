@@ -5,8 +5,7 @@ hola cynthia yo a ti también
 prioridades:
     > typewriter
     > hover feedback
-    > hover medico
-    > tween medico
+	> TWEENS!!!
     > ajustar cursor
     > flujo de dialogo
     > escribir guion

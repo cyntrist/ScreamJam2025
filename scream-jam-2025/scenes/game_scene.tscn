@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=68 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bovmgpminp4xx" path="res://assets/herramientas/selector/3.png" id="4_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://cnc50f8n2xoid" path="res://assets/herramientas/selector/4.png" id="5_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://ntraa1gmvhd7" path="res://assets/herramientas/selector/5.png" id="6_103ce"]
-[ext_resource type="Texture2D" uid="uid://dj6owog1ucjyy" path="res://assets/eventos/persona.png" id="8_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://unqt6eyhfv2e" path="res://assets/eventos/imagenes/base/evento_1.png" id="8_yhpmq"]
 [ext_resource type="Texture2D" uid="uid://ct0pkyuhxrx3k" path="res://assets/eventos/burbuja.png" id="9_103ce"]
 [ext_resource type="Texture2D" uid="uid://cpbmainrpqjq1" path="res://assets/eventos/imagenes/base/evento_2.png" id="9_qlma2"]
@@ -62,7 +61,45 @@
 [ext_resource type="BitMap" uid="uid://bcd3y3pxepogu" path="res://assets/feedback/mascaras/investigar_antebrazo.png" id="44_8k5xn"]
 [ext_resource type="BitMap" uid="uid://cc2jpjh4kwgwy" path="res://assets/feedback/mascaras/investigar_muslo.png" id="46_nqvol"]
 [ext_resource type="BitMap" uid="uid://bh3ah8uc610ae" path="res://assets/feedback/mascaras/investigar_pierna.png" id="48_hn37p"]
+[ext_resource type="Texture2D" uid="uid://f6b46l5lif8c" path="res://assets/eventos/persona0.png" id="48_v0850"]
+[ext_resource type="Texture2D" uid="uid://cl1iluhco5quj" path="res://assets/eventos/persona1.png" id="49_v0850"]
 [ext_resource type="Script" uid="uid://cwvvl4quofakj" path="res://scripts/typewriter.gd" id="56_740e7"]
+
+[sub_resource type="Animation" id="Animation_v0850"]
+resource_name = "medico_tween"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Diálogo/Persona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 2.7320802),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rsf47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Diálogo/Persona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_740e7"]
+_data = {
+&"RESET": SubResource("Animation_rsf47"),
+&"medico_tween": SubResource("Animation_v0850")
+}
 
 [node name="GameScene" type="Control" node_paths=PackedStringArray("feedback_nodos")]
 layout_mode = 3
@@ -80,6 +117,11 @@ spr_evento_jodido = Array[Texture2D]([ExtResource("20_fet82"), ExtResource("21_r
 spr_consecuencia_curada = Array[Texture2D]([ExtResource("25_reh8g"), ExtResource("26_4558e"), ExtResource("27_1mrcw"), ExtResource("28_4har0"), ExtResource("29_n4qu0")])
 spr_consecuencia_jodida = Array[Texture2D]([ExtResource("30_thlb5"), ExtResource("31_h0ynx"), ExtResource("32_y1k1x"), ExtResource("33_8k5xn")])
 feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/Mano"), NodePath("Cuerpo/Feedback/Muslo"), NodePath("Cuerpo/Feedback/Pie"), NodePath("Cuerpo/Feedback/Torso")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_740e7")
+}
 
 [node name="Fondo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -260,10 +302,11 @@ offset_bottom = 40.0
 
 [node name="Persona" type="TextureButton" parent="Diálogo"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("8_ro0ie")
+texture_normal = ExtResource("48_v0850")
+texture_hover = ExtResource("49_v0850")
 texture_click_mask = ExtResource("36_nqvol")
 
 [node name="Burbuja" type="TextureButton" parent="Diálogo"]
