@@ -3,9 +3,7 @@ hola nieves te quiero
 hola cynthia yo a ti también
 
 prioridades:
-    > typewriter
     > TWEENS!!!
-    > ajustar cursor
     > flujo de dialogo
     > escribir guion
     > escribir traducción 
