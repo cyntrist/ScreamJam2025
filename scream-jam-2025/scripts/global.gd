@@ -68,4 +68,11 @@ func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 		Global.on_transition_begin.emit(speed)
 
 func timer(tiempo = 1.0):
-	await get_tree().create_timer(tiempo).timeout
+	return get_tree().create_timer(tiempo).timeout
+
+func make_visible(obj, alpha = 1., speed = 1., delay = 0):
+	var tween = get_tree().create_tween()
+	var color = Color.WHITE
+	color.a = alpha
+	tween.tween_property(obj, "modulate", color, speed).set_delay(delay)
+	pass

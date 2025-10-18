@@ -124,6 +124,7 @@ libraries = {
 }
 
 [node name="Fondo" type="ColorRect" parent="."]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -301,6 +302,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Persona" type="TextureButton" parent="Diálogo"]
+z_index = -1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -310,7 +312,7 @@ texture_hover = ExtResource("49_v0850")
 texture_click_mask = ExtResource("36_nqvol")
 
 [node name="Burbuja" type="TextureButton" parent="Diálogo"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
