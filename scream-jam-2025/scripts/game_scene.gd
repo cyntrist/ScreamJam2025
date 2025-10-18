@@ -61,6 +61,7 @@ func on_disable():
 	pass
 
 func _ready() -> void:
+	Global.input_enabled = false;	
 	pass
 	
 func _process(_delta: float) -> void:
@@ -186,8 +187,10 @@ func _mostrar_imagen(parte):
 func _deseleccionar(parte):
 	Global.parte_seleccionada = -1;
 	feedback_nodos[parte].visible = false;
-	nodo_evento.visible = false;
+	#nodo_evento.visible = false;
+	Global.make_visible(nodo_evento, 0.0)
 	persona.disabled = false
+	Global.make_visible(dialogo, 1.0)
 
 
 
@@ -248,8 +251,8 @@ func _acabar_o_no():
 
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
-	Global.make_visible(manta, false, 1.0)
-	await Global.timer(1.0)
+	Global.make_visible(manta, 0.0, 3.0)
+	await Global.timer(3.0)
 	_deseleccionar(Global.parte_seleccionada)
 	#_mostrar_persona()
 
@@ -269,7 +272,6 @@ func _mostrar_dialogo():
 	Global.make_visible(burbuja, 1., 0.1)
 	dialogo.visible = true
 	burbuja.visible = true
-	var ind = 1; #TODO
 	#texto.text = tr(str(ind))
 	texto.iniciar_dialogo(1)
 	persona.texture_normal = medico_mano_alta

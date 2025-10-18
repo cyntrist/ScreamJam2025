@@ -322,9 +322,9 @@ texture_click_mask = ExtResource("38_hn37p")
 
 [node name="Texto" type="RichTextLabel" parent="Diálogo/Burbuja"]
 layout_mode = 0
-offset_left = 260.0
+offset_left = 278.0
 offset_top = 364.0
-offset_right = 790.0
+offset_right = 808.0
 offset_bottom = 514.0
 mouse_filter = 1
 theme_override_fonts/bold_font = ExtResource("37_y1k1x")
@@ -338,7 +338,7 @@ vertical_alignment = 1
 script = ExtResource("56_740e7")
 
 [node name="Evento" type="Control" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -6,6 +6,7 @@ prioridades:
     > TWEENS!!!
     > flujo de dialogo
     > escribir guion
+    > mecánica por herramienta
     > escribir traducción 
     > implementar sonido
     > reemplazar y reencajar arte
