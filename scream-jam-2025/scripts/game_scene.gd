@@ -19,8 +19,11 @@ extends Scene
 @onready var persona = $"Diálogo/Persona"
 @onready var burbuja = $"Diálogo/Burbuja"
 @onready var texto = $"Diálogo/Burbuja/Texto"
+@onready var animator = $AnimationPlayer
 
 var mano = load("res://assets/herramientas/selector/desequipar.png")
+var medico_mano_baja = load("res://assets/eventos/persona0.png")
+var medico_mano_alta = load("res://assets/eventos/persona1.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
 var es_hora_de_acabar = false;
 var final_bueno = false;
@@ -176,12 +179,14 @@ func _mostrar_imagen(parte):
 	nodo_evento.visible = true;
 	_actualizar_img(parte)
 	_esconder_dialogo()
+	persona.disabled = true;
 	pass
 	
 func _deseleccionar(parte):
 	Global.parte_seleccionada = -1;
 	feedback_nodos[parte].visible = false;
 	nodo_evento.visible = false;
+	persona.disabled = false
 
 
 
@@ -242,7 +247,8 @@ func _acabar_o_no():
 
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
-	manta.visible = false;
+	Global.make_visible(manta, false, 1.0)
+	await Global.timer(1.0)
 	_deseleccionar(Global.parte_seleccionada)
 	#_mostrar_persona()
 
@@ -253,22 +259,29 @@ func _on_feedback_pressed() -> void:
 	pass # Replace with function body.
 
 
+
+
+
 # DIALOGOS
 func _mostrar_dialogo():
+	Global.make_visible(dialogo, 1., 0.1)
+	Global.make_visible(burbuja, 1., 0.1)
 	dialogo.visible = true
 	burbuja.visible = true
-	var ind = 1;
-	texto.text = tr(str(ind))
+	var ind = 1; #TODO
+	#texto.text = tr(str(ind))
+	texto.iniciar_dialogo(1)
+	persona.texture_normal = medico_mano_alta
 	pass
 
 func _mostrar_persona():
-	dialogo.visible = true
-	burbuja.visible = false
-	persona.visible = true
+	Global.make_visible(dialogo, 1., 0.25)
+	Global.make_visible(burbuja, 0., 0.25)
+	Global.make_visible(persona, 1., 0.25)
 	pass
 
 func _esconder_dialogo():
-	dialogo.visible = false
+	Global.make_visible(dialogo, 0.5, 0.25)
 
 func _on_burbuja_pressed() -> void:
 	if (es_hora_de_acabar):
@@ -279,12 +292,18 @@ func _on_burbuja_pressed() -> void:
 	else:
 		Global.input_enabled = true
 		Global.habilitar_input.emit()
-	burbuja.visible = false
+	#burbuja.visible = false
+	Global.make_visible(burbuja, 0., 0.25)
+	persona.texture_normal = medico_mano_baja
 	pass # Replace with function body.
 
 
 func _on_persona_pressed() -> void:
+	if (Global.input_enabled):
+		animator.play("medico_tween", -1, 1.0);
+		await Global.timer(0.25)
+		_mostrar_dialogo()
 	Global.input_enabled = false
 	Global.deshabilitar_input.emit()
-	_mostrar_dialogo()
+	persona.texture_normal = medico_mano_alta
 	pass # Replace with function body.
