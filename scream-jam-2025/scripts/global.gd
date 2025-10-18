@@ -70,9 +70,19 @@ func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 func timer(tiempo = 1.0):
 	return get_tree().create_timer(tiempo).timeout
 
-func make_visible(obj, alpha = 1., speed = 1., delay = 0):
+func make_visible(obj, alpha = 1., speed = 0.25, delay = 0):
 	var tween = get_tree().create_tween()
-	var color = Color.WHITE
+	var color = obj.modulate
 	color.a = alpha
+	if (alpha != 0.0):
+		#print_debug("deberia verse")
+		obj.visible = true;
 	tween.tween_property(obj, "modulate", color, speed).set_delay(delay)
+	#tween.tween_callback(_visibility.bind(obj, alpha)).set_delay(speed + delay)
+	pass
+
+func _visibility(obj, alpha):
+	if (alpha == 0.0): 
+		print_debug("deberia esconderse")
+		obj.visible = false
 	pass
