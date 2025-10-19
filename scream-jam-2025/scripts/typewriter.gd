@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 			self.visible_ratio = min(text_displayed, 1.0)
 
 func iniciar_dialogo(ind):
-	self.text = tr(str(ind));
+	self.text = tr(ind);
 	text_length = self.text.length();
 	text_displayed = 0;
 	self.visible_ratio = 0;

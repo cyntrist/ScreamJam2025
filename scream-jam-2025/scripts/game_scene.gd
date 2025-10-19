@@ -27,6 +27,8 @@ var medico_mano_alta = load("res://assets/eventos/persona1.png")
 var ind_selec = 0; # indice de la herramienta seleccionada
 var es_hora_de_acabar = false;
 var final_bueno = false;
+var primer_dialogo = true;
+
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 
 func on_enable():
@@ -277,8 +279,17 @@ func _mostrar_dialogo():
 	Global.show(burbuja, 1., 0.1)
 	dialogo.visible = true
 	burbuja.visible = true
-	#texto.text = tr(str(ind))
-	texto.iniciar_dialogo(1)
+	
+	var indice = str(1);
+	if (primer_dialogo):
+		indice = "INTRO"
+	elif(final_bueno and not es_hora_de_acabar): #
+		indice = "DESVELAR"
+	elif(es_hora_de_acabar): # si has llegado al final pero la has cagado 
+		indice = "GAMEOVER"
+	else:
+		indice = str(Global.rng.randi_range(1, 4))
+	texto.iniciar_dialogo(indice)
 	persona.texture_normal = medico_mano_alta
 	animator.play("medico_tween", -1, 1.0);
 	pass
@@ -294,11 +305,13 @@ func _esconder_dialogo():
 	Global.show(dialogo, 0.5, 0.25)
 
 func _on_burbuja_pressed() -> void:
+	if (primer_dialogo):
+		primer_dialogo = false
 	if (es_hora_de_acabar):
 		var state = Global.Scenes.GAME_OVER
-		if (final_bueno):
-			state = Global.Scenes.CREDITS
-		Global.change_scene(state)
+		if (!final_bueno):
+			Global.change_scene(state)
+		
 	else:
 		Global.input_enabled = true
 		Global.habilitar_input.emit()
