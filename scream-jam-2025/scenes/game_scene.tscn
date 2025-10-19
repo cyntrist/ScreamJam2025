@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=70 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -63,6 +63,8 @@
 [ext_resource type="BitMap" uid="uid://bh3ah8uc610ae" path="res://assets/feedback/mascaras/investigar_pierna.png" id="48_hn37p"]
 [ext_resource type="Texture2D" uid="uid://f6b46l5lif8c" path="res://assets/eventos/persona0.png" id="48_v0850"]
 [ext_resource type="Texture2D" uid="uid://cl1iluhco5quj" path="res://assets/eventos/persona1.png" id="49_v0850"]
+[ext_resource type="FontFile" uid="uid://datkg37av0062" path="res://fonts/almendra/Almendra-BoldItalic.ttf" id="54_if0ju"]
+[ext_resource type="FontFile" uid="uid://fo6cd8s00mu2" path="res://fonts/almendra/Almendra-Italic.ttf" id="55_gyxn8"]
 [ext_resource type="Script" uid="uid://cwvvl4quofakj" path="res://scripts/typewriter.gd" id="56_740e7"]
 
 [sub_resource type="Animation" id="Animation_rsf47"]
@@ -318,19 +320,21 @@ texture_click_mask = ExtResource("38_hn37p")
 [node name="Texto" type="RichTextLabel" parent="Diálogo/Burbuja"]
 layout_mode = 0
 offset_left = 247.0
-offset_top = 255.0
+offset_top = 315.0
 offset_right = 808.0
-offset_bottom = 530.0
+offset_bottom = 590.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("55_gyxn8")
 theme_override_fonts/bold_font = ExtResource("37_y1k1x")
+theme_override_fonts/bold_italics_font = ExtResource("54_if0ju")
+theme_override_fonts/italics_font = ExtResource("55_gyxn8")
 theme_override_font_sizes/normal_font_size = 52
 theme_override_font_sizes/bold_font_size = 52
 theme_override_font_sizes/bold_italics_font_size = 52
 theme_override_font_sizes/italics_font_size = 52
 bbcode_enabled = true
 text = "yepaaa"
-vertical_alignment = 1
 script = ExtResource("56_740e7")
 
 [node name="Evento" type="Control" parent="."]
