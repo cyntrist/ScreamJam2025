@@ -5,8 +5,9 @@ hola cynthia yo a ti también
 prioridades:
     > TWEENS!!!
     > flujo de dialogo
-    > escribir guion
+    > hexadecimal
     > mecánica por herramienta
+    > escribir guion
     > escribir traducción 
     > implementar sonido
     > reemplazar y reencajar arte
