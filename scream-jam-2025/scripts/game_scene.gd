@@ -28,6 +28,7 @@ var ind_selec = 0; # indice de la herramienta seleccionada
 var es_hora_de_acabar = false;
 var final_bueno = false;
 var primer_dialogo = true;
+var ultimo_dialogo = false;
 
 #enum Herramientas { ... } cuando sepamos cuales van a ser
 
@@ -108,6 +109,8 @@ func _on_seleccionar_pressed() -> void:
 		return
 	Global.equipar_herramienta.emit(ind_selec);
 	btn_deselec.texture_normal = spr_herram[ind_selec]
+	if (ind_selec == 4): # estamos en el final, mostrar imagen
+		pass #############TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	pass # Replace with function body.
 
 
@@ -163,6 +166,7 @@ func _investigar(parte):
 	#for nodo in feedback_nodos:
 		#print_debug(nodo.visible)
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
+		print_debug("cojoness")
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
 	else: # si ya esta seleccionada se deselecciona
@@ -173,9 +177,10 @@ func _feedback(parte):
 	#esconder el resto de partes
 	#for nodo in feedback_nodos:
 		#nodo.visible = false;
-		
-	Global.hide(feedback_nodos[Global.parte_seleccionada], 0.1)
+	print_debug(Global.parte_seleccionada)
+	if (Global.parte_seleccionada != -1): Global.hide(feedback_nodos[Global.parte_seleccionada], 0.1)
 	Global.parte_seleccionada = parte;
+	print_debug(Global.parte_seleccionada)
 	#mostrar la nuestra
 	#feedback_nodos[parte].visible = true;
 	Global.show(feedback_nodos[parte], 1.0, 0.1)
@@ -248,9 +253,6 @@ func _acabar_o_no():
 		if (Global.intentos > 0):
 			if (!Global.desbloq_ultima):
 				final_bueno = true
-				Global.desbloq_ultima = true;
-				_herramienta_final() #para que se actualice la herramienta
-				_desvelar_cuerpo()
 		else: # TODO: conversación game over
 			es_hora_de_acabar = true
 			#Global.change_scene(Global.Scenes.GAME_OVER)
@@ -258,9 +260,13 @@ func _acabar_o_no():
 
 func _desvelar_cuerpo():
 	#cuerpo.texture = cuerpo_desvelado;
-	Global.hide(manta, 3.0)
-	await Global.timer(3.0)
-	_deseleccionar(Global.parte_seleccionada)
+	#Global.hide(manta, 3.0)
+	Global.input_enabled = false;
+	var tween = get_tree().create_tween()
+	tween.tween_property(manta, "modulate:a", 0.0, 3.0)
+	tween.tween_callback(func(): manta.visible = false; Global.input_enabled = true)
+	#await Global.timer(3.0)
+	#_deseleccionar(Global.parte_seleccionada)
 	#_mostrar_persona()
 
 func _on_feedback_pressed() -> void:
@@ -285,6 +291,8 @@ func _mostrar_dialogo():
 		indice = "INTRO"
 	elif(final_bueno and not es_hora_de_acabar): #
 		indice = "DESVELAR"
+		ultimo_dialogo = true
+		persona.disabled = true
 	elif(es_hora_de_acabar): # si has llegado al final pero la has cagado 
 		indice = "GAMEOVER"
 	else:
@@ -307,10 +315,12 @@ func _esconder_dialogo():
 func _on_burbuja_pressed() -> void:
 	if (primer_dialogo):
 		primer_dialogo = false
-	if (es_hora_de_acabar):
-		var state = Global.Scenes.GAME_OVER
-		if (!final_bueno):
-			Global.change_scene(state)
+	if (!es_hora_de_acabar and final_bueno):
+		Global.desbloq_ultima = true;
+		_herramienta_final() #para que se actualice la herramienta
+		_desvelar_cuerpo()
+	if (es_hora_de_acabar and not final_bueno):
+		Global.change_scene(Global.Scenes.GAME_OVER)
 		
 	else:
 		Global.input_enabled = true

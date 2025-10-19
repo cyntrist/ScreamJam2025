@@ -249,6 +249,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Feedback"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
@@ -258,6 +259,7 @@ texture_normal = ExtResource("12_ttvoq")
 texture_click_mask = ExtResource("40_h0ynx")
 
 [node name="Torso" type="TextureButton" parent="Cuerpo/Feedback"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
@@ -267,6 +269,7 @@ texture_normal = ExtResource("13_r47aq")
 texture_click_mask = ExtResource("42_y1k1x")
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Feedback"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
@@ -276,6 +279,7 @@ texture_normal = ExtResource("14_r47aq")
 texture_click_mask = ExtResource("44_8k5xn")
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Feedback"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
@@ -285,6 +289,7 @@ texture_normal = ExtResource("15_6irsn")
 texture_click_mask = ExtResource("46_nqvol")
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Feedback"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
