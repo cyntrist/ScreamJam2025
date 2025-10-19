@@ -315,13 +315,14 @@ func _esconder_dialogo():
 func _on_burbuja_pressed() -> void:
 	if (primer_dialogo):
 		primer_dialogo = false
-	if (!es_hora_de_acabar and final_bueno):
+		Global.input_enabled = true
+		Global.habilitar_input.emit()
+	elif (!es_hora_de_acabar and final_bueno):
 		Global.desbloq_ultima = true;
 		_herramienta_final() #para que se actualice la herramienta
 		_desvelar_cuerpo()
-	if (es_hora_de_acabar and not final_bueno):
-		Global.change_scene(Global.Scenes.GAME_OVER)
-		
+	elif (es_hora_de_acabar and not final_bueno):
+		Global.change_scene(Global.Scenes.GAME_OVER)	
 	else:
 		Global.input_enabled = true
 		Global.habilitar_input.emit()
