@@ -52,7 +52,9 @@ func on_enable():
 		child.texture = null
 	es_hora_de_acabar = false;
 	final_bueno = false;
-		
+	primer_dialogo = true;
+	ultimo_dialogo = false;
+	
 	# dialogos?
 	Global.input_enabled = false;
 	Global.mostrar_dialogo.connect(_mostrar_dialogo)
@@ -110,7 +112,8 @@ func _on_seleccionar_pressed() -> void:
 	Global.equipar_herramienta.emit(ind_selec);
 	btn_deselec.texture_normal = spr_herram[ind_selec]
 	if (ind_selec == 4): # estamos en el final, mostrar imagen
-		pass #############TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		_mostrar_final();
+		pass 
 	pass # Replace with function body.
 
 
@@ -125,11 +128,8 @@ func _herramienta_final():
 	ind_selec = 4;
 	btn_selec.texture_normal = spr_herram[ind_selec]
 	btn_deselec.texture_normal = mano
-	Global.equipar_herramienta.emit(ind_selec)
+	#Global.equipar_herramienta.emit(ind_selec)
 	Global.desequipar.emit()
-	$Herramientas/Arriba.visible = false
-	$Herramientas/Abajo.visible = false
-	
 
 
 
@@ -142,6 +142,7 @@ func _on_cabeza_pressed() -> void:
 func _on_torso_pressed() -> void:
 	if !Global.input_enabled: return
 	if (!Global.desbloq_ultima): return
+	$Herramientas/Seleccionar.visible = true
 	_investigar(Global.Partes.TORSO)
 	pass # Replace with function body.
 	
@@ -164,9 +165,7 @@ func _investigar(parte):
 	if (!Global.input_enabled):
 		return
 	#for nodo in feedback_nodos:
-		#print_debug(nodo.visible)
 	if (!feedback_nodos[parte].visible): # SI LA PARTE NO ESTA SELECIONADA ES QUE NO SE VE SU FEEDBACK XD
-		print_debug("cojoness")
 		_feedback(parte) #ver feedback de la parte
 		_mostrar_imagen(parte) # mostrar y actualizar imange
 	else: # si ya esta seleccionada se deselecciona
@@ -177,10 +176,8 @@ func _feedback(parte):
 	#esconder el resto de partes
 	#for nodo in feedback_nodos:
 		#nodo.visible = false;
-	print_debug(Global.parte_seleccionada)
 	if (Global.parte_seleccionada != -1): Global.hide(feedback_nodos[Global.parte_seleccionada], 0.1)
 	Global.parte_seleccionada = parte;
-	print_debug(Global.parte_seleccionada)
 	#mostrar la nuestra
 	#feedback_nodos[parte].visible = true;
 	Global.show(feedback_nodos[parte], 1.0, 0.1)
@@ -191,7 +188,7 @@ func _mostrar_imagen(parte):
 	_actualizar_img(parte)
 	Global.show(nodo_evento, 1.0)
 	_esconder_dialogo()
-	persona.disabled = true;
+	persona.disabled = true;		
 	pass
 	
 func _deseleccionar(parte):
@@ -201,7 +198,8 @@ func _deseleccionar(parte):
 	#nodo_evento.visible = false;
 	Global.hide(feedback_nodos[parte], 0.1)
 	Global.hide(nodo_evento)
-	persona.disabled = false
+	if (manta.visible):
+		persona.disabled = false
 	Global.show(dialogo, 1.0)
 
 
@@ -214,8 +212,8 @@ func _on_imagen_pressed() -> void:
 			_actuar();
 		#else: # si ya se ha hecho algo muestra el qué por consola
 			#print_debug("Estás usando la mano y la parte está a -1")
-	else:
-		print_debug("La parte está a: ", Global.cuerpo[Global.parte_seleccionada])
+	#else:
+		#print_debug("La parte está a: ", Global.cuerpo[Global.parte_seleccionada])
 
 func _actuar() -> void: # hacer algo en la parte del cuerpo
 	if (Global.herram_equipada == Global.solucion[Global.parte_seleccionada]):
@@ -259,18 +257,19 @@ func _acabar_o_no():
 	pass;
 
 func _desvelar_cuerpo():
-	#cuerpo.texture = cuerpo_desvelado;
-	#Global.hide(manta, 3.0)
+	$Herramientas/Arriba.visible = false
+	$Herramientas/Abajo.visible = false
+	$Herramientas/Deseleccionar.visible = false
+	$Herramientas/Seleccionar.visible = false
 	Global.input_enabled = false;
 	var tween = get_tree().create_tween()
 	tween.tween_property(manta, "modulate:a", 0.0, 3.0)
-	tween.tween_callback(func(): manta.visible = false; Global.input_enabled = true)
-	#await Global.timer(3.0)
-	#_deseleccionar(Global.parte_seleccionada)
-	#_mostrar_persona()
+	tween.tween_callback(func(): manta.visible = false; _herramienta_final(); Global.input_enabled = true)
 
 func _on_feedback_pressed() -> void:
 	if !Global.input_enabled: return
+	if (Global.parte_seleccionada == 4):
+		$Herramientas/Seleccionar.visible = false
 	_deseleccionar(Global.parte_seleccionada)
 	_mostrar_persona()
 	pass # Replace with function body.
@@ -319,7 +318,6 @@ func _on_burbuja_pressed() -> void:
 		Global.habilitar_input.emit()
 	elif (!es_hora_de_acabar and final_bueno):
 		Global.desbloq_ultima = true;
-		_herramienta_final() #para que se actualice la herramienta
 		_desvelar_cuerpo()
 	elif (es_hora_de_acabar and not final_bueno):
 		Global.change_scene(Global.Scenes.GAME_OVER)	
@@ -340,3 +338,21 @@ func _on_persona_pressed() -> void:
 	Global.deshabilitar_input.emit()
 	persona.texture_normal = medico_mano_alta
 	pass # Replace with function body.
+
+
+
+
+
+
+
+
+
+
+####### FINAL
+# mostrar final va a consistir en esconder casi todos los elementos de la escena y mostrar la/s imagenes/s final/es
+func _mostrar_final():
+	Global.hide($"Diálogo")
+	Global.hide($Cuerpo)
+	Global.hide($Fondo)
+	Global.hide($Evento)
+	pass

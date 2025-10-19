@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=71 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://u013ntwjphjq" path="res://assets/consecuencias/mal_mano.png" id="31_h0ynx"]
 [ext_resource type="Texture2D" uid="uid://bj1map28b73dk" path="res://assets/consecuencias/mal_muslo.png" id="32_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://b8twesj57rfaw" path="res://assets/consecuencias/mal_pie.png" id="33_8k5xn"]
+[ext_resource type="Texture2D" uid="uid://wyydjkpt3vfh" path="res://assets/final/final0.png" id="34_5m135"]
 [ext_resource type="BitMap" uid="uid://kxmggll8n017" path="res://assets/eventos/mascara_persona.png" id="36_nqvol"]
 [ext_resource type="Texture2D" uid="uid://ba81f0cn0u5iu" path="res://assets/cuerpo_single.png" id="37_4558e"]
 [ext_resource type="FontFile" uid="uid://bth0pjgabvrfy" path="res://fonts/almendra/Almendra-Bold.ttf" id="37_y1k1x"]
@@ -124,6 +125,13 @@ feedback_nodos = [NodePath("Cuerpo/Feedback/Cabeza"), NodePath("Cuerpo/Feedback/
 libraries = {
 &"": SubResource("AnimationLibrary_740e7")
 }
+
+[node name="Final" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("34_5m135")
 
 [node name="Fondo" type="ColorRect" parent="."]
 z_index = -2
