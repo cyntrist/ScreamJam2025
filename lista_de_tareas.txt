@@ -3,13 +3,14 @@ hola nieves te quiero
 hola cynthia yo a ti también
 
 prioridades:
-    > hover feedback
-    > hexadecimal
-    > mecánica por herramienta
     > escribir guion
     > escribir traducción 
     > implementar sonido
-    > reemplazar y reencajar arte
     > respiración?
 
     > TWEENS!!!
+
+    > hover feedback
+    > hexadecimal
+    > mecánica por herramienta
+    > reemplazar y reencajar arte
