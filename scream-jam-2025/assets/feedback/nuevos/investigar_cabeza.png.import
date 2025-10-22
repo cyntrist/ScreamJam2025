@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3r7hv6febyal"
-path="res://.godot/imported/pie.png-83196fe4906739da05853cd277d93dd9.ctex"
+uid="uid://bayg3tuyydsp2"
+path="res://.godot/imported/investigar_cabeza.png-1c8a1a86e01e72acdc9c9db3e23d3e52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/pie.png"
-dest_files=["res://.godot/imported/pie.png-83196fe4906739da05853cd277d93dd9.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_cabeza.png"
+dest_files=["res://.godot/imported/investigar_cabeza.png-1c8a1a86e01e72acdc9c9db3e23d3e52.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b12nd55woemo0"
-path="res://.godot/imported/investigar_brazo.png-7fcbc8fea26d875ddfb56d6946dade38.ctex"
+uid="uid://x4000wwhblxd"
+path="res://.godot/imported/investigar_pecho.png-b76ea77cf5d1492f9c81878faeb25be7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_brazo.png"
-dest_files=["res://.godot/imported/investigar_brazo.png-7fcbc8fea26d875ddfb56d6946dade38.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_pecho.png"
+dest_files=["res://.godot/imported/investigar_pecho.png-b76ea77cf5d1492f9c81878faeb25be7.ctex"]
 
 [params]
 

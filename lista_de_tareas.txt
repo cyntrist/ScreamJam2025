@@ -3,14 +3,14 @@ hola nieves te quiero
 hola cynthia yo a ti también
 
 prioridades:
-    > escribir guion
-    > escribir traducción 
     > implementar sonido
     > respiración?
 
     > TWEENS!!!
 
-    > hover feedback
-    > hexadecimal
+juntas:
+    > escribir guion
+    > escribir traducción 
+    > código de color
     > mecánica por herramienta
     > reemplazar y reencajar arte

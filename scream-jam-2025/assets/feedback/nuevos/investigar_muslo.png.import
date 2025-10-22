@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsnqqbkaqu78"
-path="res://.godot/imported/investigar_torso.png-765641e777c3e66854b798cae0792bfa.ctex"
+uid="uid://b7e353pxk37i1"
+path="res://.godot/imported/investigar_muslo.png-3717041a7f1e390c955089ce3e553410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_torso.png"
-dest_files=["res://.godot/imported/investigar_torso.png-765641e777c3e66854b798cae0792bfa.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_muslo.png"
+dest_files=["res://.godot/imported/investigar_muslo.png-3717041a7f1e390c955089ce3e553410.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdl60gf3ll6cx"
-path="res://.godot/imported/investigar_pierna.png-e200c47073d11af6bfdd65358ca2d3fc.ctex"
+uid="uid://clqc8wma1a7w0"
+path="res://.godot/imported/investigar_muslo_hover.png-13abb71a57fcf7441bfb81378c298946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_pierna.png"
-dest_files=["res://.godot/imported/investigar_pierna.png-e200c47073d11af6bfdd65358ca2d3fc.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_muslo_hover.png"
+dest_files=["res://.godot/imported/investigar_muslo_hover.png-13abb71a57fcf7441bfb81378c298946.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbqopl173ifcn"
-path="res://.godot/imported/investigar_cabeza.png-ef75f3b32a4fc7647b157bc324338138.ctex"
+uid="uid://6sqbnqbvulgs"
+path="res://.godot/imported/investigar_pie_hover.png-23f14838a3bbbf602866e11608365708.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_cabeza.png"
-dest_files=["res://.godot/imported/investigar_cabeza.png-ef75f3b32a4fc7647b157bc324338138.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_pie_hover.png"
+dest_files=["res://.godot/imported/investigar_pie_hover.png-23f14838a3bbbf602866e11608365708.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2622bkvf152"
-path="res://.godot/imported/investigar_muslo.png-dc349529339734f2909be2b5d84c8c16.ctex"
+uid="uid://qfxvb6ly1ovo"
+path="res://.godot/imported/investigar_pecho_hover.png-aa548eec8fbfaade423a067c7023d58e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_muslo.png"
-dest_files=["res://.godot/imported/investigar_muslo.png-dc349529339734f2909be2b5d84c8c16.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_pecho_hover.png"
+dest_files=["res://.godot/imported/investigar_pecho_hover.png-aa548eec8fbfaade423a067c7023d58e.ctex"]
 
 [params]
 

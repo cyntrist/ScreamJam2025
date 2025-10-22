@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwqp6852tkknr"
-path="res://.godot/imported/investigar_antebrazo.png-896c55cdef1e24575e593793089b5a0b.ctex"
+uid="uid://ctf01s5csk63g"
+path="res://.godot/imported/investigar_mano_hover.png-54689ee660d7dfcf89581ba81d878fd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feedback/investigar_antebrazo.png"
-dest_files=["res://.godot/imported/investigar_antebrazo.png-896c55cdef1e24575e593793089b5a0b.ctex"]
+source_file="res://assets/feedback/nuevos/investigar_mano_hover.png"
+dest_files=["res://.godot/imported/investigar_mano_hover.png-54689ee660d7dfcf89581ba81d878fd5.ctex"]
 
 [params]
 

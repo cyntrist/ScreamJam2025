@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cpbv42xhe4um5"]
+[gd_scene load_steps=76 format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://dld45c5bspd6m" path="res://assets/herramientas/selector/1.png" id="2_6aqbo"]
@@ -15,16 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://c5i37cwohn3nt" path="res://assets/eventos/imagenes/base/evento_4.png" id="11_lm11r"]
 [ext_resource type="Texture2D" uid="uid://bb6wnukalhxlx" path="res://assets/herramientas/selector/arriba.png" id="12_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://cpje1qt4krj6k" path="res://assets/eventos/imagenes/base/evento_5.png" id="12_ct2tn"]
-[ext_resource type="Texture2D" uid="uid://cbqopl173ifcn" path="res://assets/feedback/investigar_cabeza.png" id="12_ttvoq"]
 [ext_resource type="BitMap" uid="uid://corv0lpxqk6v5" path="res://assets/herramientas/mascaras de seleccion/mascara_arriba.png" id="13_6aqbo"]
 [ext_resource type="Texture2D" uid="uid://e2di0gbr7i2c" path="res://assets/eventos/imagenes/base/evento_6.png" id="13_p5o0s"]
-[ext_resource type="Texture2D" uid="uid://bgsnqqbkaqu78" path="res://assets/feedback/investigar_torso.png" id="13_r47aq"]
-[ext_resource type="Texture2D" uid="uid://bwqp6852tkknr" path="res://assets/feedback/investigar_antebrazo.png" id="14_r47aq"]
 [ext_resource type="Texture2D" uid="uid://dcl03xxuyqact" path="res://assets/eventos/imagenes/curadas/evento_1_curado.png" id="14_ww6lu"]
-[ext_resource type="Texture2D" uid="uid://d2622bkvf152" path="res://assets/feedback/investigar_muslo.png" id="15_6irsn"]
 [ext_resource type="Texture2D" uid="uid://j4qbkpedht40" path="res://assets/eventos/imagenes/curadas/evento_2_curado.png" id="15_584by"]
 [ext_resource type="Script" uid="uid://d1ylut3y3xy5w" path="res://scripts/button.gd" id="16_6aqbo"]
-[ext_resource type="Texture2D" uid="uid://cdl60gf3ll6cx" path="res://assets/feedback/investigar_pierna.png" id="16_gqftm"]
 [ext_resource type="BitMap" uid="uid://cptt3q6sy5msw" path="res://assets/herramientas/mascaras de seleccion/mascara_seleccion.png" id="16_ro0ie"]
 [ext_resource type="Texture2D" uid="uid://6vxisuqhl3l6" path="res://assets/eventos/imagenes/curadas/evento_3_curado.png" id="16_v7uyc"]
 [ext_resource type="Texture2D" uid="uid://bunmnqy3hhtxi" path="res://assets/eventos/imagenes/curadas/evento_4_curado.png" id="17_cjr1f"]
@@ -56,14 +51,24 @@
 [ext_resource type="Texture2D" uid="uid://ba81f0cn0u5iu" path="res://assets/cuerpo_single.png" id="37_4558e"]
 [ext_resource type="FontFile" uid="uid://bth0pjgabvrfy" path="res://fonts/almendra/Almendra-Bold.ttf" id="37_y1k1x"]
 [ext_resource type="BitMap" uid="uid://xum3c5nure2w" path="res://assets/eventos/mascara_burbuja.png" id="38_hn37p"]
+[ext_resource type="Texture2D" uid="uid://bayg3tuyydsp2" path="res://assets/feedback/nuevos/investigar_cabeza.png" id="38_v0850"]
+[ext_resource type="Texture2D" uid="uid://cwy1roo3beigw" path="res://assets/feedback/nuevos/investigar_cabeza_hover.png" id="39_rsf47"]
 [ext_resource type="BitMap" uid="uid://bsovv55munh6p" path="res://assets/feedback/mascaras/investigar_cabeza.png" id="40_h0ynx"]
+[ext_resource type="Texture2D" uid="uid://x4000wwhblxd" path="res://assets/feedback/nuevos/investigar_pecho.png" id="41_gj43v"]
+[ext_resource type="Texture2D" uid="uid://qfxvb6ly1ovo" path="res://assets/feedback/nuevos/investigar_pecho_hover.png" id="42_wxif3"]
 [ext_resource type="BitMap" uid="uid://c08cj76srof02" path="res://assets/feedback/mascaras/investigar_torso.png" id="42_y1k1x"]
 [ext_resource type="Texture2D" uid="uid://db78cyewvur6w" path="res://assets/manta.png" id="43_1mrcw"]
 [ext_resource type="BitMap" uid="uid://bcd3y3pxepogu" path="res://assets/feedback/mascaras/investigar_antebrazo.png" id="44_8k5xn"]
+[ext_resource type="Texture2D" uid="uid://crmsykuwrlhsb" path="res://assets/feedback/nuevos/investigar_mano.png" id="44_sapxr"]
+[ext_resource type="Texture2D" uid="uid://ctf01s5csk63g" path="res://assets/feedback/nuevos/investigar_mano_hover.png" id="45_7r4dc"]
 [ext_resource type="BitMap" uid="uid://cc2jpjh4kwgwy" path="res://assets/feedback/mascaras/investigar_muslo.png" id="46_nqvol"]
+[ext_resource type="Texture2D" uid="uid://b7e353pxk37i1" path="res://assets/feedback/nuevos/investigar_muslo.png" id="47_8c2a1"]
 [ext_resource type="BitMap" uid="uid://bh3ah8uc610ae" path="res://assets/feedback/mascaras/investigar_pierna.png" id="48_hn37p"]
 [ext_resource type="Texture2D" uid="uid://f6b46l5lif8c" path="res://assets/eventos/persona0.png" id="48_v0850"]
+[ext_resource type="Texture2D" uid="uid://clqc8wma1a7w0" path="res://assets/feedback/nuevos/investigar_muslo_hover.png" id="48_woxj3"]
 [ext_resource type="Texture2D" uid="uid://cl1iluhco5quj" path="res://assets/eventos/persona1.png" id="49_v0850"]
+[ext_resource type="Texture2D" uid="uid://b1r0rjnaca5ck" path="res://assets/feedback/nuevos/investigar_pie.png" id="50_3xjkh"]
+[ext_resource type="Texture2D" uid="uid://6sqbnqbvulgs" path="res://assets/feedback/nuevos/investigar_pie_hover.png" id="51_5m5uq"]
 [ext_resource type="FontFile" uid="uid://datkg37av0062" path="res://fonts/almendra/Almendra-BoldItalic.ttf" id="54_if0ju"]
 [ext_resource type="FontFile" uid="uid://fo6cd8s00mu2" path="res://fonts/almendra/Almendra-Italic.ttf" id="55_gyxn8"]
 [ext_resource type="Script" uid="uid://cwvvl4quofakj" path="res://scripts/typewriter.gd" id="56_740e7"]
@@ -257,53 +262,53 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Cabeza" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("12_ttvoq")
+texture_normal = ExtResource("38_v0850")
+texture_hover = ExtResource("39_rsf47")
 texture_click_mask = ExtResource("40_h0ynx")
 
 [node name="Torso" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("13_r47aq")
+texture_normal = ExtResource("41_gj43v")
+texture_hover = ExtResource("42_wxif3")
 texture_click_mask = ExtResource("42_y1k1x")
 
 [node name="Mano" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("14_r47aq")
+texture_normal = ExtResource("44_sapxr")
+texture_hover = ExtResource("45_7r4dc")
 texture_click_mask = ExtResource("44_8k5xn")
 
 [node name="Muslo" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("15_6irsn")
+texture_normal = ExtResource("47_8c2a1")
+texture_hover = ExtResource("48_woxj3")
 texture_click_mask = ExtResource("46_nqvol")
 
 [node name="Pie" type="TextureButton" parent="Cuerpo/Feedback"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
-texture_normal = ExtResource("16_gqftm")
+texture_normal = ExtResource("50_3xjkh")
+texture_hover = ExtResource("51_5m5uq")
 texture_click_mask = ExtResource("48_hn37p")
 
 [node name="Diálogo" type="Control" parent="."]
